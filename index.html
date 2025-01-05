@@ -79,9 +79,30 @@
             color: #555;
         }
 
+        .work-code-container {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
         .work-code {
             font-size: 1.7rem;
             font-weight: 550;
+        }
+
+        .copy-button {
+            padding: 0.25rem;
+            background: #e0e0e0;
+            color: #fff;
+            border: none;
+            border-radius: 0.3rem;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: background 0.3s ease;
+        }
+
+        .copy-button:hover, .copy-button:active {
+            background: #d6d6d6;
         }
 
         .work-age-release {
@@ -202,7 +223,10 @@
             <button class="expand-button" id="expand-button" aria-label="タイトルを展開">▼</button>
         </div>
         <div class="work-meta-line">
-            <span class="work-code">Code: sone00499</span>
+            <div class="work-code-container">
+                <span class="work-code">SONE-499</span>
+                <button class="copy-button" onclick="copyCode()">📄</button>
+            </div>
             <span class="work-age-release">("15 y/o" 2008/12/26)</span>
         </div>
         <div class="work-content">
@@ -244,41 +268,61 @@
             </p>
         </details>
     </div>
+
+    <!-- copyCode関数をDOMContentLoadedの外に移動 -->
     <script>
-document.addEventListener("DOMContentLoaded", () => {
-    const title = document.getElementById("work-title");
-    const button = document.getElementById("expand-button");
-    const titleLine = title.parentElement;
+    function copyCode() {
+        const code = document.querySelector(".work-code").innerText;
 
-    const updateButtonVisibility = () => {
-        const titleWidth = title.scrollWidth;
-        const titleLineWidth = titleLine.offsetWidth;
-        const buttonWidth = button.offsetWidth || 16;
-
-        if (titleWidth + buttonWidth > titleLineWidth) {
-            button.style.display = "inline-block";
+        if (navigator.clipboard) { // Clipboard APIが利用可能かチェック
+            navigator.clipboard.writeText(code).then(() => {
+                const button = document.querySelector(".copy-button");
+                button.textContent = "Copied!";
+                setTimeout(() => {
+                    button.textContent = "📄";
+                }, 1500);
+            }).catch(err => {
+                alert("コピーに失敗しました: " + err);
+            });
         } else {
-            button.style.display = "none";
+            alert("このブラウザはコピー機能をサポートしていません");
         }
-    };
+    }
 
-    window.onload = updateButtonVisibility;
-    window.addEventListener("resize", updateButtonVisibility);
+    document.addEventListener("DOMContentLoaded", () => {
+        const title = document.getElementById("work-title");
+        const button = document.getElementById("expand-button");
+        const titleLine = title.parentElement;
 
-    button.addEventListener("click", () => {
-        const isCollapsed = title.style.whiteSpace === "nowrap" || title.style.whiteSpace === "";
+        const updateButtonVisibility = () => {
+            const titleWidth = title.scrollWidth;
+            const titleLineWidth = titleLine.offsetWidth;
+            const buttonWidth = button.offsetWidth || 16;
 
-        if (isCollapsed) {
-            title.style.whiteSpace = "normal"; // 修正済み
-            button.textContent = "▲";
-            button.setAttribute("aria-label", "タイトルを折りたたむ");
-        } else {
-            title.style.whiteSpace = "nowrap"; // 修正済み
-            button.textContent = "▼";
-            button.setAttribute("aria-label", "タイトルを展開");
-        }
+            if (titleWidth + buttonWidth > titleLineWidth) {
+                button.style.display = "inline-block";
+            } else {
+                button.style.display = "none";
+            }
+        };
+
+        window.onload = updateButtonVisibility;
+        window.addEventListener("resize", updateButtonVisibility);
+
+        button.addEventListener("click", () => {
+            const isCollapsed = title.style.whiteSpace === "nowrap" || title.style.whiteSpace === "";
+
+            if (isCollapsed) {
+                title.style.whiteSpace = "normal"; // 修正済み
+                button.textContent = "▲";
+                button.setAttribute("aria-label", "タイトルを折りたたむ");
+            } else {
+                title.style.whiteSpace = "nowrap"; // 修正済み
+                button.textContent = "▼";
+                button.setAttribute("aria-label", "タイトルを展開");
+            }
+        });
     });
-});
     </script>
 </body>
 </html>
