@@ -92,17 +92,22 @@
 
         .copy-button {
             padding: 0.25rem;
-            background: #e0e0e0;
-            color: #fff;
+            background: transparent;
             border: none;
             border-radius: 0.3rem;
             cursor: pointer;
-            font-size: 1.2rem;
-            transition: background 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.1s ease, background 0.3s ease;
         }
 
-        .copy-button:hover, .copy-button:active {
-            background: #d6d6d6;
+        .copy-button:hover {
+            background: #e0e0e0;
+        }
+
+        .copy-button:active {
+            transform: scale(0.95);
         }
 
         .work-age-release {
@@ -225,7 +230,12 @@
         <div class="work-meta-line">
             <div class="work-code-container">
                 <span class="work-code">SONE-499</span>
-                <button class="copy-button" onclick="copyCode()">📄</button>
+                <button class="copy-button" onclick="copyCode()" aria-label="コピー">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                </button>
             </div>
             <span class="work-age-release">("15 y/o" 2008/12/26)</span>
         </div>
@@ -277,9 +287,9 @@
         if (navigator.clipboard) { // Clipboard APIが利用可能かチェック
             navigator.clipboard.writeText(code).then(() => {
                 const button = document.querySelector(".copy-button");
-                button.textContent = "Copied!";
+                button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
                 setTimeout(() => {
-                    button.textContent = "📄";
+                    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>';
                 }, 1500);
             }).catch(err => {
                 alert("コピーに失敗しました: " + err);
@@ -313,11 +323,11 @@
             const isCollapsed = title.style.whiteSpace === "nowrap" || title.style.whiteSpace === "";
 
             if (isCollapsed) {
-                title.style.whiteSpace = "normal"; // 修正済み
+                title.style.whiteSpace = "normal"; 
                 button.textContent = "▲";
                 button.setAttribute("aria-label", "タイトルを折りたたむ");
             } else {
-                title.style.whiteSpace = "nowrap"; // 修正済み
+                title.style.whiteSpace = "nowrap"; 
                 button.textContent = "▼";
                 button.setAttribute("aria-label", "タイトルを展開");
             }
