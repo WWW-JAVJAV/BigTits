@@ -128,7 +128,7 @@
             border-radius: 0.4rem;
             border: 0.1rem solid #ccc;
             width: 29.25%;
-            object-fit: scale-down;
+            object-fit: contain;
         }
 
         .work-media video {
@@ -209,15 +209,23 @@
         }
 
         .work-details {
-            font-size: 1.3rem;
+            font-size: 1.35rem;
             color: #333;
             margin-top: 0.5rem;
         }
 
         .javjav-note {
-            font-size: 1.3rem;
+            font-size: 1.35rem;
             color: #333;
             margin-top: 0.5rem;
+        }
+
+        /* 538px～767pxのメディアクエリ */
+        @media (min-width: 539px) and (max-width: 767px) {
+        .work-card {
+            max-width: 52.2rem;
+            margin: auto;
+            }
         }
     </style>
 </head>
