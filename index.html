@@ -144,7 +144,7 @@
         .work-cup-tags {
             display: flex;
             flex-direction: column;
-            gap: 0.3rem;
+            gap: 0.35rem;
             margin-bottom: 0.4rem;
         }
 
@@ -221,14 +221,45 @@
         }
 
         /* 538px～767pxのメディアクエリ */
-        @media (min-width: 539px) and (max-width: 1000px) { 
+        @media (min-width: 539px) and (max-width: 767px) { 
             .work-card {
 
+            }
+
+            .work-title {
+                font-size: 2.1rem;
             }
 
             .work-media img {
                 width: 45.54%;
                 content: url("https://image.mgstage.com/images/prestige/abf/094/pb_e_abf-094.jpg");
+            }
+
+            .work-media video {
+                width: 54.46%;
+            }
+        }
+        /* 768px～1024pxのメディアクエリ */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .work-title {
+                font-size: 2.2rem;
+            }
+
+            .work-card {
+                max-width: 90%;
+            }
+
+            .work-code {
+                font-size: 1.8rem; /0.1rem大きく/
+            }
+
+            .copy-buttom {
+                font-size: 1.7rem;
+            }
+
+            .work-media img {
+                content: url("https://image.mgstage.com/images/prestige/abf/094/pb_e_abf-094.jpg");
+                width: 45.54%;
             }
 
             .work-media video {
