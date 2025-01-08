@@ -209,6 +209,32 @@
             color: #FF9900;
         }
 
+         .note-container {
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+             position: relative; /* 絶対配置の基準 */
+        }
+
+        .show-note-details {
+            max-width: calc(100% - 2.5rem);
+        }
+
+        .favorite-button {
+            cursor: pointer;
+            width: 24px;
+            height: 24px;
+            fill: gray;
+            transition: fill 0.2s ease;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+       .favorite-button.active {
+            fill: red;
+        }
+
         .work-details {
             font-size: 1.35rem;
             color: #333;
@@ -463,12 +489,18 @@
                 Hitomi's unforgettable debut showcases her stunning J-cup bust and charming personality. Prepare to witness her mesmerizing presence in this groundbreaking release!This video features excellent camera work and natural acting. It's a great introduction to Hitomi's style.
             </p>
         </details>
+
+      <div class="note-container">
         <details class="show-note-details">
-            <summary>JAVJAV Note</summary>
+            <summary>JAVJAV Note</summary>            
             <p class="javjav-note">
                 This video features excellent camera work and natural acting. It's a great introduction to Hitomi's style.This video features excellent camera work and natural acting. It's a great introduction to Hitomi's style.
             </p>
         </details>
+        <svg class="favorite-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+      </div>
     </div>
 
     <!-- copyCode関数をDOMContentLoadedの外に移動 -->
@@ -495,6 +527,30 @@
         const title = document.getElementById("work-title");
         const button = document.getElementById("expand-button");
         const titleLine = title.parentElement;
+
+        const favoriteButtons = document.querySelectorAll(".favorite-button");
+        const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+favoriteButtons.forEach(button => {
+    const workId = button.closest(".work-card").querySelector(".work-code").innerText; // work-codeをIDとして使用
+    if (favorites.includes(workId)) {
+        button.classList.add("active");
+    }
+
+    button.addEventListener("click", () => {
+        button.classList.toggle("active");
+        if (button.classList.contains("active")) {
+            favorites.push(workId);
+        } else {
+            const index = favorites.indexOf(workId);
+            if (index > -1) {
+                favorites.splice(index, 1);
+            }
+        }
+        localStorage.setItem("favorites", JSON.stringify(favorites));
+    });
+});
+
 
         const updateButtonVisibility = () => {
             const titleWidth = title.scrollWidth;
