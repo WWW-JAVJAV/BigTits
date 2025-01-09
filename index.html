@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ヘッダー＆ナビゲーションテスト</title>
+    <title>均等タップ領域のナビゲーション</title>
     <style>
         body {
             margin: 0;
@@ -14,7 +14,7 @@
 
         .header {
             text-align: center;
-            padding: 1rem 0;
+            padding: 10px 0;
             background: #fff;
             border-bottom: 1px solid #ddd;
         }
@@ -26,23 +26,25 @@
 
         .nav-menu {
             display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin: 1rem 0;
+            justify-content: space-between;
+            margin: 0;
             padding: 0;
             list-style: none;
             background: #f8f8f8;
         }
 
         .nav-menu li {
-            display: inline;
+            flex-basis: 25%; /* 各項目を親要素の25%幅に設定 */
+            text-align: center;
         }
 
         .nav-menu a {
+            display: block;
             text-decoration: none;
             color: #333;
-            font-size: 1.6rem;
+            font-size: 16px;
             font-weight: bold;
+            padding: 10px 0; /* タップ領域を広げる */
         }
     </style>
 </head>
@@ -53,10 +55,10 @@
   
         <!-- ナビゲーションメニュー -->
         <ul class="nav-menu">
-            <li><a href="#">新着作品</a></li>
-            <li><a href="#">女優一覧</a></li>
-            <li><a href="#">タグ一覧</a></li>
-            <li><a href="#">お気に入り</a></li>
+            <li><a href="#">New</a></li>
+            <li><a href="#">Actress</a></li>
+            <li><a href="#">Tag</a></li>
+            <li><a href="#">Favorites</a></li>
         </ul>
     </header>
 </body>
