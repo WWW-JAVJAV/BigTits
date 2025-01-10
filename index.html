@@ -1,65 +1,97 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>均等タップ領域のナビゲーション</title>
+    <title>Contact Us</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            box-sizing: border-box;
+        .c-form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-
-        .header {
-            text-align: center;
-            padding: 10px 0;
-            background: #fff;
-            border-bottom: 1px solid #ddd;
+        .c-form__item {
+            margin-bottom: 20px;
         }
-
-        .logo {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .nav-menu {
-            display: flex;
-            justify-content: space-between;
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            background: #f8f8f8;
-        }
-
-        .nav-menu li {
-            flex-basis: 25%; /* 各項目を親要素の25%幅に設定 */
-            text-align: center;
-        }
-
-        .nav-menu a {
+        .c-form__label {
             display: block;
-            text-decoration: none;
-            color: #333;
-            font-size: 16px;
+            margin-bottom: 5px;
             font-weight: bold;
-            padding: 10px 0; /* タップ領域を広げる */
+        }
+        .c-form__input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: solid 1px #333;
+            border-radius: 4px;
+        }
+        .c-form__submit button {
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            background-color: green;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <header class="header">
-        <!-- ロゴ画像を挿入 -->
-        <img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/OK2.png?raw=true" alt="Big Tits JAVJAV ロゴ" class="logo">
-  
-        <!-- ナビゲーションメニュー -->
-        <ul class="nav-menu">
-            <li><a href="#">New</a></li>
-            <li><a href="#">Actress</a></li>
-            <li><a href="#">Tag</a></li>
-            <li><a href="#">Favorites</a></li>
-        </ul>
-    </header>
+    <form
+        action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSflnuwJk7UOWGO-S-sWL8-qfhIw3lHGCtSvHYxf7EZxrd8iqg/formResponse"
+        method="POST"
+        target="hidden_iframe"
+        onsubmit="submitted=true;"
+        class="c-form"
+    >
+        <!-- ラジオボタン -->
+        <div class="c-form__item">
+            <label class="c-form__label">Select Subject</label>
+            <div>
+                <input type="radio" name="entry.544256827" value="Actress Request" id="subject-actress" required>
+                <label for="subject-actress">Actress Request</label><br>
+
+                <input type="radio" name="entry.544256827" value="Site Feedback" id="subject-feedback">
+                <label for="subject-feedback">Site Feedback</label><br>
+
+                <input type="radio" name="entry.544256827" value="Other" id="subject-other">
+                <label for="subject-other">Other</label>
+            </div>
+        </div>
+
+        <!-- 自由記述 -->
+        <div class="c-form__item">
+            <label for="field-message" class="c-form__label">Message</label>
+            <textarea
+                name="entry.1993459116"
+                id="field-message"
+                class="c-form__input"
+                rows="5"
+                placeholder="Enter your message here..."
+                required
+            ></textarea>
+        </div>
+
+        <!-- 送信ボタン -->
+        <div class="c-form__submit">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+
+    <!-- Hidden iframe for redirect -->
+    <iframe
+        name="hidden_iframe"
+        id="hidden_iframe"
+        style="display: none;"
+        onload="if(submitted){window.location='thanks.html';}"
+    ></iframe>
+
+    <script type="text/javascript">
+        let submitted = false;
+    </script>
 </body>
 </html>
