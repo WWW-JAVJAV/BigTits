@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JAVJAV Request & Feedback Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         html {
             font-size: 62.5%;
@@ -59,7 +60,7 @@
         }
 
         .c-form {
-            max-width: 90%;
+            max-width: min(90%, 500px);
             margin: 20px auto;
             padding: 20px;
             background: #fff;
@@ -102,15 +103,15 @@
         }
 
         .c-form__submit button {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
             color: #fff;
             background-color: #007bff;
             border: none;
-            padding: 10px 20px;
+            padding: 8px 13px;
             border-radius: 4px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.2s;
         }
 
         .c-form__submit button:hover {
@@ -148,7 +149,24 @@
             margin: 20px auto;
             font-size: 14px;
             max-width: min(90%, 452px);
+        }
 
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 10px auto 20px;
+        }
+
+        .social-links a {
+            font-size: 32px;
+            color: #333;
+            transition: transform 0.2s, color 0.2s;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.1);
+            color: #007bff;
         }
 
         .footer {
@@ -214,6 +232,11 @@
             .nav-menu a {
                 font-size: 18px;
             }
+
+            p {
+                font-size: 16px;
+                max-width: min(90%, 480px);
+            }
         }
     </style>
 </head>
@@ -271,6 +294,19 @@
 
     <!-- 段落をフォームの下に移動 -->
     <p>Since we cannot reply directly to your questions, please send us a DM on our social media, and we will do our best to respond.</p>
+
+    <!-- SNSリンク -->
+    <div class="social-links">
+        <a href="https://twitter.com/your_username" target="_blank" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://instagram.com/your_username" target="_blank" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://pinterest.com/your_username" target="_blank" aria-label="Pinterest">
+            <i class="fab fa-pinterest"></i>
+        </a>
+    </div>
 
     <!-- Hidden iframe for Googleフォーム送信 -->
     <iframe name="hidden_iframe" id="hidden_iframe" style="display: none;"></iframe>
