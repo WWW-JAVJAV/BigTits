@@ -3,75 +3,257 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
+    <title>JAVJAV Request & Feedback Form</title>
     <style>
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+        }
+
+        .header {
+            padding: 10px 0;
+            background: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .logo {
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .nav-menu {
+            display: flex;
+            justify-content: space-between;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            background: #f0f0f0;
+            margin: 0 auto;
+        }
+
+        .nav-menu li {
+            flex-basis: 25%;
+            text-align: center;
+            border: 2px solid #FFF;
+        }
+
+        .nav-menu a {
+            display: block;
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 0;
+        }
+
+        .nav-menu a:hover {
+            text-decoration: underline;
+        }
+
         .c-form {
             max-width: 600px;
-            margin: 0 auto;
+            margin: 20px auto;
             padding: 20px;
-            background: #f9f9f9;
+            background: #fff;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
         }
+
         .c-form__item {
             margin-bottom: 20px;
+            font-size: 14px;
         }
+
         .c-form__label {
             display: block;
             margin-bottom: 5px;
             font-weight: bold;
+            font-size: 16px;
         }
-        .c-form__input {
+
+        .c-form__input,
+        .c-form__textarea {
             width: 100%;
             padding: 10px;
             font-size: 16px;
-            border: solid 1px #333;
+            border: solid 1px #ccc;
             border-radius: 4px;
         }
+
+        .radio-group div {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .radio-group input[type="radio"] {
+            margin: 0;
+        }
+
         .c-form__submit button {
             font-size: 18px;
             font-weight: bold;
             color: #fff;
-            background-color: green;
+            background-color: #007bff;
             border: none;
             padding: 10px 20px;
             border-radius: 4px;
             cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .c-form__submit button:hover {
+            background-color: #0056b3;
+        }
+
+        .thanks-message {
+            display: none;
+            text-align: center;
+            font-size: 18px;
+            color: green;
+            margin-top: 20px;
+        }
+
+        .thanks-message a {
+            display: inline-block;
+            margin-top: 20px;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .thanks-message a:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            font-size: 20px;
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+            margin: 20px auto;
+            font-size: 14px;
+        }
+
+        .footer {
+            background: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.6rem;
+            color: #333;
+            border-top: 1px solid #ddd;
+        }
+
+        .footer-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #007acc;
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .copyright {
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+         /* 768px～1024pxのメディアクエリ */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .logo {
+                max-width: 80%;
+            }
+
+            .nav-menu {
+                max-width: 80%;
+            }
+        }
+
+        /* 1025px～1920pxのメディアクエリ */
+        @media (min-width: 1025px) {
+            .logo {
+                max-width: min(80%, 100rem);
+            }
+
+            .nav-menu {
+                max-width: min(80%, 100rem);
+            }
+
+            .nav-menu a {
+                font-size: 18px;
+            }
         }
     </style>
 </head>
 <body>
-    <form
-        action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSflnuwJk7UOWGO-S-sWL8-qfhIw3lHGCtSvHYxf7EZxrd8iqg/formResponse"
-        method="POST"
-        target="hidden_iframe"
-        onsubmit="submitted=true;"
-        class="c-form"
-    >
-        <!-- ラジオボタン -->
+    <!-- ヘッダー -->
+    <header class="header">
+        <a href="index.html"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/OK2.png?raw=true" alt="Big Tits JAVJAV ロゴ" class="logo"></a>
+        <ul class="nav-menu">
+            <li><a href="new-releases.html">New</a></li>
+            <li><a href="actress-list.html">Actress</a></li>
+            <li><a href="tags.html">Tag</a></li>
+            <li><a href="favorites.html">Favorites</a></li>
+        </ul>
+    </header>
+
+    <h1>JAVJAV Request & Feedback Form</h1>
+
+    <p>You can use this form to submit actress requests, site feedback, or report issues. We are also interested in creating sites for categories other than Big Boobs JAV, so feel free to send us your suggestions.</p>
+    
+    <!-- フォーム部分 -->
+    <form class="c-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSflnuwJk7UOWGO-S-sWL8-qfhIw3lHGCtSvHYxf7EZxrd8iqg/formResponse" method="POST" target="hidden_iframe" onsubmit="showThanksMessage();">
+        <!-- 希望内容選択 -->
         <div class="c-form__item">
-            <label class="c-form__label">Select Subject</label>
-            <div>
-                <input type="radio" name="entry.544256827" value="Actress Request" id="subject-actress" required>
-                <label for="subject-actress">Actress Request</label><br>
-
-                <input type="radio" name="entry.544256827" value="Site Feedback" id="subject-feedback">
-                <label for="subject-feedback">Site Feedback</label><br>
-
-                <input type="radio" name="entry.544256827" value="Other" id="subject-other">
-                <label for="subject-other">Other</label>
+            <label class="c-form__label">Select Request Type</label>
+            <div class="radio-group">
+                <div>
+                    <input type="radio" name="entry.544256827" value="Actress Request" id="request-actress" required>
+                    <label for="request-actress">Actress Request</label>
+                </div>
+                <div>
+                    <input type="radio" name="entry.544256827" value="Other" id="request-other">
+                    <label for="request-other">Other</label>
+                </div>
             </div>
         </div>
 
-        <!-- 自由記述 -->
+        <!-- メッセージ内容 -->
         <div class="c-form__item">
-            <label for="field-message" class="c-form__label">Message</label>
+            <label class="c-form__label" for="field-message">Message</label>
             <textarea
-                name="entry.1993459116"
+                class="c-form__textarea"
                 id="field-message"
-                class="c-form__input"
+                name="entry.1993459116"
+                placeholder="Please enter your request or feedback here..."
                 rows="5"
-                placeholder="Enter your message here..."
                 required
             ></textarea>
         </div>
@@ -82,16 +264,41 @@
         </div>
     </form>
 
-    <!-- Hidden iframe for redirect -->
-    <iframe
-        name="hidden_iframe"
-        id="hidden_iframe"
-        style="display: none;"
-        onload="if(submitted){window.location='thanks.html';}"
-    ></iframe>
+    <!-- 段落をフォームの下に移動 -->
+    <p>Since we cannot reply directly to your questions, please send us a DM on our social media, and we will do our best to respond.</p>
 
-    <script type="text/javascript">
-        let submitted = false;
+    <!-- Hidden iframe for Googleフォーム送信 -->
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display: none;"></iframe>
+
+    <!-- Thanks Message -->
+    <div class="thanks-message" id="thanks-message">
+        Thank you for your submission! We will review your feedback.<br>
+        <a href="#" onclick="resetForm(); return false;">Submit another response</a>
+    </div>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="copyright">© 2025 JAVJAV Big Tits. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="terms-of-survice.html">Terms of Service</a></li>
+                <li><a href="contact-us.html">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        function showThanksMessage() {
+            document.querySelector('.c-form').style.display = 'none';
+            document.getElementById('thanks-message').style.display = 'block';
+        }
+
+        function resetForm() {
+            document.querySelector('.c-form').reset();
+            document.querySelector('.c-form').style.display = 'block';
+            document.getElementById('thanks-message').style.display = 'none';
+        }
     </script>
 </body>
 </html>
