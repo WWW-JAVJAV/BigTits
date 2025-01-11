@@ -1,345 +1,586 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JAVJAV Request & Feedback Form</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>作品カードリセット</title>
     <style>
+        /* グローバルリセット */
         html {
             font-size: 62.5%;
         }
 
         body {
-            margin: 0;
+            margin: 0.8rem;
             padding: 0;
-            font-family: Arial, sans-serif;
             box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            font-size: 1.4rem;
+            line-height: 1.4;
+            background: #f4f4f4;
         }
 
-        .header {
-            padding: 10px 0;
-            background: #fff;
-            border-bottom: 1px solid #ddd;
+        *, *::before, *::after {
+            box-sizing: inherit;
         }
 
-        .logo {
+        img, video {
             max-width: 100%;
             height: auto;
-            margin: 0 auto;
-            display: block;
         }
 
-        .nav-menu {
+        .work-card {
+            background: #fff;
+            border-radius: 0.5rem;
+            margin: 1rem auto;
+            padding: 1rem;
+            max-width: 100%;
+            box-shadow: 0 0 1rem rgba(0, 0, 0, 0.05);
+        }
+
+        .work-title-line {
             display: flex;
             justify-content: space-between;
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            background: #f0f0f0;
-            margin: 0 auto;
-        }
-
-        .nav-menu li {
-            flex-basis: 25%;
-            text-align: center;
-            border: 2px solid #FFF;
-        }
-
-        .nav-menu a {
-            display: block;
-            text-decoration: none;
-            color: #333;
-            font-size: 16px;
-            font-weight: bold;
-            padding: 10px 0;
-        }
-
-        .nav-menu a:hover {
-            text-decoration: underline;
-        }
-
-        .c-form {
-            max-width: min(90%, 500px);
-            margin: 20px auto;
-            padding: 20px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            box-sizing: border-box;
-        }
-
-        .c-form__item {
-            margin-bottom: 20px;
-            font-size: 14px;
-        }
-
-        .c-form__label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-            font-size: 16px;
-        }
-
-        .c-form__input,
-        .c-form__textarea {
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            border: solid 1px #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-
-        .radio-group div {
-            display: flex;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 10px;
+            margin-bottom: 0.5rem;
         }
 
-        .radio-group input[type="radio"] {
+        .work-title {
+            font-size: 1.9rem;
+            font-weight: bold;
             margin: 0;
-        }
-
-        .c-form__submit button {
-            font-size: 16px;
-            font-weight: bold;
-            color: #fff;
-            background-color: #007bff;
-            border: none;
-            padding: 8px 13px;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-
-        .c-form__submit button:hover {
-            background-color: #0056b3;
-        }
-
-        .thanks-message {
-            display: none;
-            text-align: center;
-            font-size: 18px;
-            color: green;
-            margin-top: 20px;
-        }
-
-        .thanks-message a {
+            color: #000;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
             display: inline-block;
-            margin-top: 20px;
-            color: #007bff;
-            text-decoration: none;
-            font-weight: bold;
+            max-width: calc(100% - 2.2rem);
+            background: #eee;
+            border-radius: 0.6rem;
+            box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
         }
 
-        .thanks-message a:hover {
-            text-decoration: underline;
-        }
-
-        h1 {
-            font-size: 20px;
-            text-align: center;
-            margin: 20px auto;
-        }
-
-        p {
-            text-align: center;
-            margin: 20px auto;
-            font-size: 14px;
-            max-width: min(90%, 452px);
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 10px auto 20px;
-        }
-
-        .social-links a {
-            font-size: 32px;
-            color: #333;
-            transition: transform 0.2s, color 0.2s;
-        }
-
-        .social-links a:hover {
-            transform: scale(1.1);
-            color: #007bff;
-        }
-
-        .footer {
-            background: #f0f0f0;
-            padding: 20px;
-            text-align: center;
-            font-size: 1.6rem;
-            color: #333;
-            border-top: 1px solid #ddd;
-        }
-
-        .footer-content {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .footer-links {
-            list-style: none;
-            padding: 0;
-            margin: 10px 0;
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-        }
-
-        .footer-links a {
-            text-decoration: none;
+        .expand-button {
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
             color: #007acc;
+            padding: 0;
+            display: none;
+        }
+
+        .work-meta-line {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.2rem;
+            color: #555;
+        }
+
+        .work-code-container {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .work-code {
+            font-size: 1.6rem;
+            font-weight: 550;
+        }
+
+        .copy-button {
+            padding: 0.25rem 0.35rem;
+            background: transparent;
+            border: none;
+            border-radius: 0.3rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.1s ease, background 0.3s ease;
+        }
+
+        .copy-button:hover {
+            background: #e0e0e0;
+        }
+
+        .copy-button:active {
+            transform: scale(0.95);
+        }
+
+        .work-age-release {
+            font-size: 1.2rem;
+        }
+
+        .work-content {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .work-media {
+            display: flex;
+        }
+
+        .work-media img {
+            border-radius: 0.4rem;
+            border: 0.1rem solid #ccc;
+            width: 29.25%;
+            object-fit: contain;
+        }
+
+        .work-media video {
+            border-radius: 0.4rem;
+            border: 0.1rem solid #ccc;
+            aspect-ratio: 16 / 9;
+            height: auto;
+            object-fit: contain;
+            background: #000;
+            width: 70.75%;
+        }
+
+        .work-cup-tags {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .work-actress-list {
+            display: flex;
+            flex-direction: column; /* 縦に並べる */
+            gap: 0.1rem;
+        }
+
+        .actress-name a {
+            font-size: 1.7rem;
+            color: #007acc;
+            text-decoration: none;
             font-weight: bold;
-            font-size: 1.4rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: block;
+            max-width: 100%;
         }
 
-        .footer-links a:hover {
-            text-decoration: underline;
+        .work-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.35rem;
+            margin-bottom: 0.35rem;
         }
 
-        .copyright {
-            margin-bottom: 10px;
-            color: #666;
+        .work-tag {
+            display: inline-block;
+            white-space: nowrap;
+            font-size: 1.3rem;
+            font-weight: bold;
+            padding: 0.4rem 0.7rem;
+            background: #eee;
+            border-radius: 0.4rem;
+            color: #333;
+            text-decoration: none; /* 下線をなくす */
         }
 
-         /* 768px～1024pxのメディアクエリ */
+        .tags-details summary {
+            font-size: 1.55rem;
+            cursor: pointer;
+            font-weight: bold;
+            color: red;
+        }
+
+        .show-more-details summary {
+            font-size: 1.55rem;
+            cursor: pointer;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: gray;
+        }
+        
+        .show-note-details summary {
+            font-size: 1.55rem;
+            cursor: pointer;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #FF9900;
+        }
+
+         .note-container {
+             position: relative; /* 絶対配置の基準 */
+        }
+
+        .show-note-details {
+            max-width: calc(100% - 2.5rem);
+        }
+
+        .favorite-button {
+            cursor: pointer;
+            width: 2.2rem;
+            height: 2.2rem;
+            fill: gray;
+            transition: fill 0.2s ease;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+       .favorite-button.active {
+            fill: red;
+        }
+
+        .work-details {
+            font-size: 1.35rem;
+            color: #333;
+            margin-top: 0.5rem;
+        }
+
+        .javjav-note {
+            font-size: 1.35rem;
+            color: #333;
+            margin-top: 0.5rem;
+        }
+
+        /* 538px～767pxのメディアクエリ */
+        @media (min-width: 539px) and (max-width: 767px) { 
+            .work-card {
+
+            }
+
+            .work-title {
+                font-size: 2.1rem;
+            }
+
+            .work-media img {
+                width: 45.54%;
+                content: url("https://image.mgstage.com/images/prestige/abf/094/pb_e_abf-094.jpg");
+            }
+
+            .work-media video {
+                width: 54.46%;
+            }
+        }
+        /* 768px～1024pxのメディアクエリ */
         @media (min-width: 768px) and (max-width: 1024px) {
-            .logo {
-                max-width: 80%;
+            .work-title {
+                font-size: 2.2rem;
             }
 
-            .nav-menu {
+            .work-card {
                 max-width: 80%;
+                padding: 1.5rem;
             }
+
+            .work-code {
+                font-size: 1.8rem; /0.1rem大きく/
+            }
+
+            .copy-button {
+                font-size: 1.7rem;
+            }
+
+            .work-media img {
+                content: url("https://image.mgstage.com/images/prestige/abf/094/pb_e_abf-094.jpg");
+                width: 45.54%;
+            }
+
+            .work-media video {
+                width: 54.46%;
+            }
+
+            .work-details {
+                font-size: 1.45rem;
+            }
+
+            .javjav-note {
+                font-size: 1.45rem;
+            }
+
+
+        }
+        /* 1025px～1920pxのメディアクエリ */
+        @media (min-width: 1025px) and (max-width: 1920px){
+
+            .work-title {
+                font-size: 2.2rem;
+            }
+
+            .work-card {
+                max-width: min(80%, 100rem);
+                padding: 1.5rem;
+            }
+
+            .work-code {
+                font-size: 1.9rem; /0.2rem大きく/
+            }
+
+            .work-age-release {
+                font-size: 1.4rem;
+            }
+
+            .copy-button {
+                font-size: 1.8rem;
+            }
+
+            .work-media img {
+                content: url("https://image.mgstage.com/images/prestige/abf/094/pb_e_abf-094.jpg");
+                width: 45.54%;
+            }
+
+            .work-media video {
+                width: 54.46%;
+            }
+
+            .actress-name a {
+                font-size: 1.85rem;
+            }
+
+            .tags-details summary {
+                font-size: 1.7rem;
+            }
+
+            .work-tags {
+                gap: 0.7rem;
+            }
+
+            .work-tag {
+                font-size: 1.5rem;
+            }
+
+            .show-more-details summary {
+                font-size: 1.7rem;
+            }
+
+            .show-note-details summary {
+                font-size: 1.7rem;
+            }
+
+            .work-details {
+                font-size: 1.65rem;
+            }
+
+            .javjav-note {
+                font-size: 1.65rem;
+            }
+
         }
 
-        /* 1025px～1920pxのメディアクエリ */
-        @media (min-width: 1025px) {
-            .logo {
-                max-width: min(80%, 100rem);
+        /* 1921px～pxのメディアクエリ */
+        @media (min-width: 1921px) {
+
+            .work-title {
+                font-size: 2.2rem;
             }
 
-            .nav-menu {
-                max-width: min(80%, 100rem);
+            .work-card {
+                max-width: min(80%, 110rem;)
+                padding: 1.5rem;
             }
 
-            .nav-menu a {
-                font-size: 18px;
+            .work-code {
+                font-size: 1.9rem; /0.2rem大きく/
             }
 
-            p {
-                font-size: 16px;
-                max-width: min(90%, 480px);
+            .work-age-release {
+                font-size: 1.4rem;
             }
+
+            .copy-button {
+                font-size: 1.8rem;
+            }
+
+            .work-media img {
+                content: url("https://image.mgstage.com/images/prestige/abf/094/pb_e_abf-094.jpg");
+                width: 45.54%;
+            }
+
+            .work-media video {
+                width: 54.46%;
+            }
+
+            .actress-name a {
+                font-size: 1.85rem;
+            }
+
+            .tags-details summary {
+                font-size: 1.7rem;
+            }
+
+            .work-tags {
+                gap: 0.7rem;
+            }
+
+            .work-tag {
+                font-size: 1.5rem;
+            }
+
+            .show-more-details summary {
+                font-size: 1.7rem;
+            }
+
+            .show-note-details summary {
+                font-size: 1.7rem;
+            }
+
+            .work-details {
+                font-size: 1.65rem;
+            }
+
+            .javjav-note {
+                font-size: 1.65rem;
+            }
+
         }
     </style>
 </head>
 <body>
-    <!-- ヘッダー -->
-    <header class="header">
-        <a href="index.html"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/OK2.png?raw=true" alt="Big Tits JAVJAV ロゴ" class="logo"></a>
-        <ul class="nav-menu">
-            <li><a href="new-releases.html">New</a></li>
-            <li><a href="actress-list.html">Actress</a></li>
-            <li><a href="tags.html">Tag</a></li>
-            <li><a href="favorites.html">Favorites</a></li>
-        </ul>
-    </header>
-
-    <h1>Request & Feedback Form</h1>
-
-    <p>You can use this form to submit actress requests, site feedback, or report issues. We are also interested in creating sites for categories other than Big Boobs JAV, so feel free to send us your suggestions.</p>
-    
-    <!-- フォーム部分 -->
-    <form class="c-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSflnuwJk7UOWGO-S-sWL8-qfhIw3lHGCtSvHYxf7EZxrd8iqg/formResponse" method="POST" target="hidden_iframe" onsubmit="showThanksMessage();">
-        <!-- 希望内容選択 -->
-        <div class="c-form__item">
-            <label class="c-form__label">Select Request Type</label>
-            <div class="radio-group">
-                <div>
-                    <input type="radio" name="entry.544256827" value="Actress Request" id="request-actress" required>
-                    <label for="request-actress">Actress Request</label>
+    <div class="work-card">
+        <div class="work-title-line">
+            <h1 class="work-title" id="work-title">Short Title Long Name Test OK Come Beautiful Women I'm rich Finally</h1>
+            <button class="expand-button" id="expand-button" aria-label="タイトルを展開">▼</button>
+        </div>
+        <div class="work-meta-line">
+            <div class="work-code-container">
+                <span class="work-code">SONE-499</span>
+                <button class="copy-button" onclick="copyCode()" aria-label="コピー">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                </button>
+            </div>
+            <span class="work-age-release">("15 y/o" 2008/12/26)</span>
+        </div>
+        <div class="work-content">
+            <div class="work-media">
+                <img src="https://image.mgstage.com/images/ntrnet/sp/348ntr/078/h1-06_sp-348ntr-078.jpg">
+                <video controls>
+                    <source src="https://sample.mgstage.com/sample/ntrnet/348ntr/078/348ntr-078_20250108T095002.mp4#t=82">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="work-cup-tags">
+                <div class="work-actress-list">
+                    <div class="actress-name"><a href="#">Shion Utsunomiya</a></div>
+                    <div class="actress-name"><a href="#">Extraordinarily Long Actress Name for Testing Ellipsis Behavior and Responsiveness</a></div>
                 </div>
-                <div>
-                    <input type="radio" name="entry.544256827" value="Other" id="request-other">
-                    <label for="request-other">Other</label>
-                </div>
+                <details class="tags-details">
+                    <summary>Tags</summary>
+                    <div class="work-tags">
+                        <a href="#" class="work-tag">Debut</a>
+                        <a href="#" class="work-tag">Big Bust</a>
+                        <a href="#" class="work-tag">HD Video</a>
+                        <a href="#" class="work-tag">Solo</a>
+                        <a href="#" class="work-tag">Amateur</a>
+                        <a href="#" class="work-tag">Amateur</a>
+                    </div>
+                </details>
             </div>
         </div>
+        <details class="show-more-details">
+            <summary>Official Description</summary>
+            <p class="work-details">
+                Hitomi's unforgettable debut showcases her stunning J-cup bust and charming personality. Prepare to witness her mesmerizing presence in this groundbreaking release!This video features excellent camera work and natural acting. It's a great introduction to Hitomi's style.
+            </p>
+        </details>
 
-        <!-- メッセージ内容 -->
-        <div class="c-form__item">
-            <label class="c-form__label" for="field-message">Message</label>
-            <textarea
-                class="c-form__textarea"
-                id="field-message"
-                name="entry.1993459116"
-                placeholder="Please enter your request or feedback here..."
-                rows="5"
-                required
-            ></textarea>
-        </div>
-
-        <!-- 送信ボタン -->
-        <div class="c-form__submit">
-            <button type="submit">Submit</button>
-        </div>
-    </form>
-
-    <!-- 段落をフォームの下に移動 -->
-    <p>Since we cannot reply directly to your questions, please send us a DM on our social media, and we will do our best to respond.</p>
-
-    <!-- SNSリンク -->
-    <div class="social-links">
-        <a href="https://twitter.com/your_username" target="_blank" aria-label="Twitter">
-            <i class="fab fa-twitter"></i>
-        </a>
-        <a href="https://instagram.com/your_username" target="_blank" aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://pinterest.com/your_username" target="_blank" aria-label="Pinterest">
-            <i class="fab fa-pinterest"></i>
-        </a>
+      <div class="note-container">
+        <details class="show-note-details">
+            <summary>JAVJAV Note</summary>            
+            <p class="javjav-note">
+                This video features excellent camera work and natural acting. It's a great introduction to Hitomi's style.This video features excellent camera work and natural acting. It's a great introduction to Hitomi's style.
+            </p>
+        </details>
+        <svg class="favorite-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+      </div>
     </div>
 
-    <!-- Hidden iframe for Googleフォーム送信 -->
-    <iframe name="hidden_iframe" id="hidden_iframe" style="display: none;"></iframe>
+    <!-- copyCode関数をDOMContentLoadedの外に移動 -->
+ <script>
+    function copyCode() {
+        const code = document.querySelector(".work-code").innerText;
 
-    <!-- Thanks Message -->
-    <div class="thanks-message" id="thanks-message">
-        Thank you for your submission! We will review your feedback.<br>
-        <a href="#" onclick="resetForm(); return false;">Submit another response</a>
-    </div>
-
-    <!-- フッター -->
-    <footer class="footer">
-        <div class="footer-content">
-            <p class="copyright">© 2025 JAVJAV Big Tits. All rights reserved.</p>
-            <ul class="footer-links">
-                <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                <li><a href="terms-of-survice.html">Terms of Service</a></li>
-                <li><a href="contact-us.html">Contact</a></li>
-            </ul>
-        </div>
-    </footer>
-
-    <script>
-        function showThanksMessage() {
-            document.querySelector('.c-form').style.display = 'none';
-            document.getElementById('thanks-message').style.display = 'block';
+        if (navigator.clipboard) { // Clipboard APIが利用可能かチェック
+            navigator.clipboard.writeText(code).then(() => {
+                const button = document.querySelector(".copy-button");
+                button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+                setTimeout(() => {
+                    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>';
+                }, 1500);
+            }).catch(err => {
+                alert("コピーに失敗しました: " + err);
+            });
+        } else {
+            alert("このブラウザはコピー機能をサポートしていません");
         }
+    }
 
-        function resetForm() {
-            document.querySelector('.c-form').reset();
-            document.querySelector('.c-form').style.display = 'block';
-            document.getElementById('thanks-message').style.display = 'none';
-        }
-    </script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const title = document.getElementById("work-title");
+        const button = document.getElementById("expand-button");
+        const titleLine = title.parentElement;
+
+        // Setを使ってお気に入りを管理
+        const favoriteButtons = document.querySelectorAll(".favorite-button");
+        const favoritesSet = new Set(JSON.parse(localStorage.getItem("favorites") || "[]"));
+
+        favoriteButtons.forEach(button => {
+            const workId = button.closest(".work-card").querySelector(".work-code").innerText; // work-codeをIDとして使用
+            
+            // お気に入り済みならハートを赤色に
+            if (favoritesSet.has(workId)) {
+                button.classList.add("active");
+            }
+
+            button.addEventListener("click", () => {
+                button.classList.toggle("active");
+
+                if (button.classList.contains("active")) {
+                    favoritesSet.add(workId); // お気に入りに追加
+                } else {
+                    favoritesSet.delete(workId); // お気に入りから削除
+                }
+
+                // ローカルストレージに保存（Setを配列に変換）
+                localStorage.setItem("favorites", JSON.stringify([...favoritesSet]));
+            });
+        });
+
+        const updateButtonVisibility = () => {
+            const titleWidth = title.scrollWidth;
+            const titleLineWidth = titleLine.offsetWidth;
+            const buttonWidth = button.offsetWidth || 16;
+
+            if (titleWidth + buttonWidth > titleLineWidth) {
+                button.style.display = "inline-block";
+            } else {
+                button.style.display = "none";
+            }
+        };
+
+        window.onload = updateButtonVisibility;
+        window.addEventListener("resize", updateButtonVisibility);
+
+        button.addEventListener("click", () => {
+            const isCollapsed = title.style.whiteSpace === "nowrap" || title.style.whiteSpace === "";
+
+            if (isCollapsed) {
+                title.style.whiteSpace = "normal"; 
+                button.textContent = "▲";
+                button.setAttribute("aria-label", "タイトルを折りたたむ");
+            } else {
+                title.style.whiteSpace = "nowrap"; 
+                button.textContent = "▼";
+                button.setAttribute("aria-label", "タイトルを展開");
+            }
+        });
+    });
+</script>
+
 </body>
 </html>
