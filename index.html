@@ -5,17 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>メインビジュアル</title>
     <style>
-
         html {
             font-size: 62.5%;
         }
 
-
-
         .main-visual {
             display: flex;
             background-color: #f4f4f4;
-            margin: 1rem auto;
+            margin: 1rem auto 0.25rem;
+            max-width: 100%;
+            padding: 1rem;
+            gap: 0.5rem;
+        }
+
+        .main-visual2 {
+            display: flex;
+            background-color: #f4f4f4;
+            margin: 0.25rem auto 1rem;
             max-width: 100%;
             padding: 1rem;
             gap: 0.5rem;
@@ -28,29 +34,50 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
-        .main-visual__item img {
+            .main-visual2__item {
+            flex: 1;
+            aspect-ratio: 5 / 7; /* アスペクト比を固定 */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .main-visual__item img, .main-visual2__item img {
             width: 100%;
             height: 100%;
-            object-fit: cover; 
+            object-fit: cover;
             transition: transform 0.3s ease;
             cursor: pointer;
         }
 
-        .main-visual__item img:hover {
+        .main-visual__item img:hover, .main-visual2__item img:hover {
             transform: scale(1.05);
         }
     </style>
 </head>
 <body>
+    <!-- 1段目のメインビジュアル -->
     <div class="main-visual">
         <div class="main-visual__item">
-            <img src="https://pics.dmm.co.jp/digital/video/ipzz00454/ipzz00454ps.jpg" alt="Actress 1"> 
+            <img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/pb_e_298gone-072.jpg?raw=true" alt="Actress 1"> 
         </div>
         <div class="main-visual__item">
-            <img src="https://pics.dmm.co.jp/digital/video/sone00536/sone00536ps.jpg" alt="Actress 2">
+            <img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/sone00517pl.jpg?raw=true" alt="Actress 2">
         </div>
         <div class="main-visual__item">
-            <img src="https://image.mgstage.com/images/mercury/298gone/072/pf_o1_298gone-072.jpg" alt="Actress 3">
+            <img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/sone00536pl.jpg?raw=true" alt="Actress 3">
+        </div>
+    </div>
+
+    <!-- 2段目のメインビジュアル -->
+    <div class="main-visual2">
+        <div class="main-visual2__item">
+            <img src="https://image.mgstage.com/images/sodcreate/sp/107stars/931/h1-06_sp-107stars-931.jpg" alt="Actress 4"> 
+        </div>
+        <div class="main-visual2__item">
+            <img src="https://image.mgstage.com/images/prestige/sp/abf/190/h1-06_sp-abf-190.jpg" alt="Actress 5">
+        </div>
+        <div class="main-visual2__item">
+            <img src="https://image.mgstage.com/images/prestige/sp/abw/326/h1-06_sp-abw-326.jpg" alt="Actress 6">
         </div>
     </div>
 </body>
