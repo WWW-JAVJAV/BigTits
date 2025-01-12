@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>フッター</title>
+    <title>Privacy Policy</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         html {
@@ -15,6 +15,70 @@
             padding: 0;
             font-family: Arial, sans-serif;
             box-sizing: border-box;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        p {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .header {
+            padding: 10px 0;
+            background: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .logo {
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .nav-menu {
+            display: flex;
+            justify-content: space-between;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            background: #f0f0f0;
+            margin: 0 auto;
+        }
+
+        .nav-menu li {
+            flex-basis: 25%;
+            text-align: center;
+            border: 2px solid #FFF;
+        }
+
+        .nav-menu a {
+            display: block;
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 0;
+        }
+
+        .nav-menu a:hover {
+            text-decoration: underline;
         }
 
         .footer {
@@ -67,9 +131,56 @@
             margin-bottom: 10px;
             color: #666;
         }
+
+        /* 768px～1024pxのメディアクエリ */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .logo {
+                max-width: 80%;
+            }
+
+            .nav-menu {
+                max-width: 80%;
+            }
+        }
+
+        /* 1025px～1920pxのメディアクエリ */
+        @media (min-width: 1025px) {
+            .logo {
+                max-width: min(80%, 100rem);
+            }
+
+            .nav-menu {
+                max-width: min(80%, 100rem);
+            }
+
+            .nav-menu a {
+                font-size: 18px;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/OK2.png?raw=true" alt="Big Tits JAVJAV ロゴ" class="logo" onclick="location.href='index.html'" style="cursor: pointer;">
+        <ul class="nav-menu">
+            <li><a href="new-releases.html">New</a></li>
+            <li><a href="actress-list.html">Actress</a></li>
+            <li><a href="tags.html">Tag</a></li>
+            <li><a href="favorites.html">Favorites</a></li>
+        </ul>
+    </header>
+
+    <!-- プライバシーポリシー本文 -->
+    <div class="container">
+        <h1>Privacy Policy</h1>
+        <p><strong>Introduction</strong><br>
+        This website (hereinafter referred to as "the Site") is personally operated as a hobby and respects users' privacy. The Site does not collect personal information.</p>
+
+        <p><strong>Changes to the Privacy Policy</strong><br>
+        The Site may update the Privacy Policy as necessary. The revised Privacy Policy will take effect from the time it is posted on this page.</p>
+    </div>
+
     <!-- フッター -->
     <footer class="footer">
         <div class="footer-content">
@@ -98,6 +209,7 @@
         </div>
     </footer>
 
+    <!-- Font Awesome Kit -->
     <script src="https://kit.fontawesome.com/your_kit_id.js" crossorigin="anonymous"></script>
 </body>
 </html>
