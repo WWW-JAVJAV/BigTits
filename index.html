@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service</title>
+    <title>JAVJAV Request & Feedback Form</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         html {
@@ -15,28 +15,6 @@
             padding: 0;
             font-family: Arial, sans-serif;
             box-sizing: border-box;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        p {
-            font-size: 1.25rem;
-            margin-bottom: 10px;
         }
 
         .header {
@@ -75,6 +53,103 @@
             font-size: 16px;
             font-weight: bold;
             padding: 10px 0;
+        }
+
+        .nav-menu a:hover {
+            text-decoration: underline;
+        }
+
+        .c-form {
+            max-width: min(90%, 500px);
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+        }
+
+        .c-form__item {
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .c-form__label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .c-form__input,
+        .c-form__textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: solid 1px #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .radio-group div {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .radio-group input[type="radio"] {
+            margin: 0;
+        }
+
+        .c-form__submit button {
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            padding: 8px 13px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .c-form__submit button:hover {
+            background-color: #0056b3;
+        }
+
+        .thanks-message {
+            display: none;
+            text-align: center;
+            font-size: 18px;
+            color: green;
+            margin-top: 20px;
+        }
+
+        .thanks-message a {
+            display: inline-block;
+            margin-top: 20px;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .thanks-message a:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            font-size: 20px;
+            text-align: center;
+            margin: 20px auto;
+        }
+
+        p {
+            text-align: center;
+            margin: 20px auto;
+            font-size: 14px;
+            max-width: min(90%, 452px);
         }
 
         .footer {
@@ -152,11 +227,16 @@
             .nav-menu a {
                 font-size: 18px;
             }
+
+            p {
+                font-size: 16px;
+                max-width: min(90%, 480px);
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- ヘッダー -->
     <header class="header">
         <img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/OK2.png?raw=true" alt="Big Tits JAVJAV ロゴ" class="logo" onclick="location.href='index.html'" style="cursor: pointer;">
         <ul class="nav-menu">
@@ -167,29 +247,59 @@
         </ul>
     </header>
 
-    <!-- Terms of Service Content -->
-    <div class="container">
-        <h1>Terms of Service</h1>
-        <p><strong>1. Introduction</strong><br>
-        This website (hereinafter referred to as "the Site") is intended to introduce Japanese adult video works. By using the Site, users are deemed to have agreed to these Terms of Service.</p>
+    <h1>Request & Feedback Form</h1>
 
-        <p><strong>2. Prohibited Activities</strong><br>
-        The following activities are prohibited when using the Site:<br>
-        - Acts that infringe copyright or intellectual property rights<br>
-        - Acts that interfere with the operation of the Site<br>
-        - Acts that violate laws or public order and morals</p>
+    <p>You can use this form to submit actress requests, site feedback, or report issues. We are also interested in creating sites for categories other than Big Boobs JAV, so feel free to send us your suggestions.</p>
 
-        <p><strong>3. Disclaimer</strong><br>
-        The images and samples used in the product cards on the Site are obtained with permission from official websites. However, the Site does not guarantee the accuracy of the information provided. Additionally, the Site is not responsible for any damages caused by external links or advertisements. Users must use the Site at their own discretion and responsibility.</p>
+    <!-- フォーム部分 -->
+    <form class="c-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSflnuwJk7UOWGO-S-sWL8-qfhIw3lHGCtSvHYxf7EZxrd8iqg/formResponse" method="POST" target="hidden_iframe" onsubmit="showThanksMessage();">
+        <!-- 希望内容選択 -->
+        <div class="c-form__item">
+            <label class="c-form__label">Select Request Type</label>
+            <div class="radio-group">
+                <div>
+                    <input type="radio" name="entry.544256827" value="Actress Request" id="request-actress" required>
+                    <label for="request-actress">Actress Request</label>
+                </div>
+                <div>
+                    <input type="radio" name="entry.544256827" value="Other" id="request-other">
+                    <label for="request-other">Other</label>
+                </div>
+            </div>
+        </div>
 
-        <p><strong>4. Adult Content</strong><br>
-        The Site includes adult content as it introduces adult video works. Users must be of legal age in their country or region to view adult content and must comply with applicable local laws.</p>
+        <!-- メッセージ内容 -->
+        <div class="c-form__item">
+            <label class="c-form__label" for="field-message">Message</label>
+            <textarea
+                class="c-form__textarea"
+                id="field-message"
+                name="entry.1993459116"
+                placeholder="Please enter your request or feedback here..."
+                rows="5"
+                required
+            ></textarea>
+        </div>
 
-        <p><strong>5. Changes to the Terms of Service</strong><br>
-        These Terms of Service may be updated as necessary. The revised Terms will take effect from the time they are posted on this page.</p>
+        <!-- 送信ボタン -->
+        <div class="c-form__submit">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+
+    <!-- 段落をフォームの下に移動 -->
+    <p>Since we cannot reply directly to your questions, please send us a DM on our social media, and we will do our best to respond.</p>
+
+    <!-- Hidden iframe for Googleフォーム送信 -->
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display: none;"></iframe>
+
+    <!-- Thanks Message -->
+    <div class="thanks-message" id="thanks-message">
+        Thank you for your submission!<br>
+        <a href="#" onclick="resetForm(); return false;">Submit another response</a>
     </div>
 
-    <!-- Footer -->
+    <!-- フッター -->
     <footer class="footer">
         <div class="footer-content">
             <!-- SNSリンク -->
@@ -217,7 +327,18 @@
         </div>
     </footer>
 
-    <!-- Font Awesome Kit -->
     <script src="https://kit.fontawesome.com/your_kit_id.js" crossorigin="anonymous"></script>
+    <script>
+        function showThanksMessage() {
+            document.querySelector('.c-form').style.display = 'none';
+            document.getElementById('thanks-message').style.display = 'block';
+        }
+
+        function resetForm() {
+            document.querySelector('.c-form').reset();
+            document.querySelector('.c-form').style.display = 'block';
+            document.getElementById('thanks-message').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
