@@ -10,11 +10,11 @@
         }
 
         .label-container {
-            display: inline-block;
+            display: block;
             text-align: left;
             font-size: 1.15rem;
             font-weight: bold;
-            color: #555;
+            color: #000;
             margin-bottom: 0rem;
             background: #FFEEFF;
             padding: 0.1rem 0.1rem;
@@ -86,7 +86,8 @@
         }   
 
         .label-container {
-            margin-left: 9%;
+            max-width: 72%;
+            margin: 0 auto;
         }
 
         .view-more {
@@ -94,8 +95,33 @@
             margin: 0 auto;
             font-size: 1.45rem;
         }
+
         }
 
+        /* 1025px～1920pxのメディアクエリ */
+        @media (min-width: 1025px) and (max-width: 1920px){
+
+         .main-visual {
+             max-width: min(70%, 80rem);
+        }
+
+        .main-visual2 {
+            max-width: min(70%, 80rem);
+        }   
+
+        .label-container {
+             max-width: min(72%, 82rem);
+            margin: 0 auto;
+        }
+
+        .view-more {
+            max-width: min(70%, 80rem);
+            margin: 0 auto;
+            font-size: 1.45rem;
+        }
+
+
+        }
     </style>
 </head>
 <body>
