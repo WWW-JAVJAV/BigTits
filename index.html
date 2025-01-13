@@ -9,10 +9,22 @@
             font-size: 62.5%;
         }
 
-        .main-visual {
+        .label-container {
+            display: inline-block;
+            text-align: left;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 0rem;
+            background: #FFEEFF;
+            padding: 0.1rem 0.1rem;
+            border-radius: 5px;
+        }
+
+         .main-visual {
             display: flex;
             background-color: #f4f4f4;
-            margin: 1rem auto 0.25rem;
+            margin: 0.1rem auto 0.25rem;
             max-width: 100%;
             padding: 1rem;
             gap: 0.5rem;
@@ -21,22 +33,15 @@
         .main-visual2 {
             display: flex;
             background-color: #f4f4f4;
-            margin: 0.25rem auto 1rem;
+            margin: 0.25rem auto 0.1rem;
             max-width: 100%;
             padding: 1rem;
             gap: 0.5rem;
         }
 
-        .main-visual__item {
+        .main-visual__item, .main-visual2__item {
             flex: 1;
-            aspect-ratio: 5 / 7; /* アスペクト比を固定 */
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-            .main-visual2__item {
-            flex: 1;
-            aspect-ratio: 5 / 7; /* アスペクト比を固定 */
+            aspect-ratio: 5 / 7;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
@@ -52,9 +57,27 @@
         .main-visual__item img:hover, .main-visual2__item img:hover {
             transform: scale(1.05);
         }
+
+        /* View More リンクのスタイル */
+        .view-more {
+            display: block;
+            text-align: right;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #007bff;
+            margin: 0rem;
+            text-decoration: none;
+        }
+
+        .view-more:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
+    <!-- ラベル -->
+    <div class="label-container">Popular Actresses</div>
+
     <!-- 1段目のメインビジュアル -->
     <div class="main-visual">
         <div class="main-visual__item">
@@ -80,5 +103,9 @@
             <img src="https://image.mgstage.com/images/prestige/sp/abw/326/h1-06_sp-abw-326.jpg" alt="Actress 6">
         </div>
     </div>
+
+    <!-- View More リンク -->
+    <a href="actress-list.html" class="view-more">View More »</a>
+
 </body>
 </html>
