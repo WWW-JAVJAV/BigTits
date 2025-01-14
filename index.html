@@ -15,6 +15,50 @@
             box-sizing: inherit; /* すべての要素が border-box を継承 */
         }
 
+        .headerbody {
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            padding: 10px 0;
+            background: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .logo {
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .nav-menu {
+            display: flex;
+            justify-content: space-between;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            background: #f0f0f0;
+            margin: 0 auto;
+        }
+
+        .nav-menu li {
+            flex-basis: 25%;
+            text-align: center;
+            border: 2px solid #FFF;
+        }
+
+        .nav-menu a {
+            display: block;
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 0;
+        }
+
+
         .hot-actresses-title {
             font-size: 1.5rem;
             font-weight: bold;
@@ -113,7 +157,7 @@
             font-family: Arial, sans-serif;
             font-size: 1.4rem;
             line-height: 1.4;
-            background: #e0e0e0;
+            background: #f4f4f4;
         }
 
         img, video {
@@ -374,6 +418,14 @@
 /* 768px～1024pxのメディアクエリ */
         @media (min-width: 768px) and (max-width: 1024px) {
 
+        .logo {
+            max-width: 80%;
+        }
+
+        .nav-menu {
+            max-width: 80%;
+        }
+
         .hot-actresses-title {
              max-width: 70%;
         }
@@ -390,10 +442,6 @@
             max-width: 70%;
             font-size: 1.5rem;
         }
-
-            .work-card-container {
-                background: #f4f4f4;
-           }
 
 
             .work-title {
@@ -439,30 +487,37 @@
 
 /* 1025px～pxのメディアクエリ */
         @media (min-width: 1025px) {
+         .logo {
+             max-width: min(80%, 100rem);
+         }
+
+         .nav-menu {
+             max-width: min(80%, 100rem);
+         }
+
+         .nav-menu a {
+             font-size: 18px;
+         }
 
          .hot-actresses-title {
              max-width: min(70%, 80rem);
-        }
+         }
 
          .main-visual {
              max-width: min(70%, 80rem);
-        }
+         }
 
-        .main-visual2 {
+         .main-visual2 {
             max-width: min(70%, 80rem);
-        }   
+         }   
 
-        .view-more {
+         .view-more {
             max-width: min(70%, 80rem);
             margin: 0 auto;
             font-size: 1.5rem;
-        }
+         }
 
-        .work-card-container {
-            background: #f4f4f4;
-        }
-
-        }
+         }
        
 /* 1025px～1920pxのメディアクエリ */
         @media (min-width: 1025px) and (max-width: 1920px){
@@ -610,7 +665,18 @@
     </style>
 </head>
 <body>
-   <h2 class="hot-actresses-title">Hot Actresses</h2>
+  <div class="headerbody">
+    <header class="header">
+        <img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/OK2.png?raw=true" alt="Big Tits JAVJAV ロゴ" class="logo" onclick="location.href='index.html'" style="cursor: pointer;">
+        <ul class="nav-menu">
+            <li><a href="new-releases.html">New</a></li>
+            <li><a href="actress-list.html">Actress</a></li>
+            <li><a href="tags.html">Tag</a></li>
+            <li><a href="favorites.html">Favorites</a></li>
+        </ul>
+    </header>
+</div> 
+<h2 class="hot-actresses-title">Hot Actresses</h2>
     <!-- 1段目のメインビジュアル -->
     <div class="main-visual">
         <div class="main-visual__item">
