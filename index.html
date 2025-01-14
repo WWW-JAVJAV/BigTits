@@ -69,10 +69,10 @@
         .view-more {
             display: block;
             text-align: right;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: bold;
             color: #007bff;
-            margin: 0rem;
+            margin: 0 auto; 
             text-decoration: none;
             padding: 0.3rem 0rem;
         }
@@ -337,13 +337,13 @@
         }
         .view-more-bottom {
             display: block;
-            text-align: right;
+            text-align: center;
             font-size: 1.5rem;
             font-weight: bold;
             color: #007bff;
-            margin: 0rem;
             text-decoration: none;
-            padding: 0.3rem 0rem;
+            padding: 0.8rem 0rem;
+            margin: 0 auto;
         }
 
         .view-more-bottom:hover {
@@ -387,7 +387,6 @@
 
         .view-more {
             max-width: 70%;
-            margin: 0 auto;
             font-size: 1.5rem;
         }
 
@@ -425,12 +424,19 @@
                 font-size: 1.45rem;
             }
 
+            .view-more-bottom {
+                max-width: 80%;
+            }
 
 
         }
 
 /* 1025px～pxのメディアクエリ */
         @media (min-width: 1025px) {
+
+         .hot-actresses-title {
+             max-width: min(70%, 80rem);
+        }
 
          .main-visual {
              max-width: min(70%, 80rem);
@@ -513,6 +519,10 @@
                 font-size: 1.65rem;
             }
 
+            .view-more-bottom {
+                max-width: min(80%, 100rem);
+            }
+
         }
 
 /* 1921px～pxのメディアクエリ */
@@ -579,6 +589,11 @@
             .javjav-note {
                 font-size: 1.65rem;
             }
+
+            .view-more-bottom {
+                max-width: min(80%, 110rem);
+            }
+
 
         }
 
@@ -935,8 +950,8 @@
         </svg>
       </div>
 </div>
-     <a href="new-releases.html" class="view-more-bottom">View More »</a>
         </div>
+<a href="new-releases.html" class="view-more-bottom">New Releases Page »</a>
     </div>
     <!-- copyCode関数をDOMContentLoadedの外に移動 -->
  <script>
