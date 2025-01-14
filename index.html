@@ -25,7 +25,8 @@
             padding-top: 1rem;
             padding-bottom: 1rem;
             font-family: initial;
-            background-color: #FFEEFF; 
+            background-color: #FFEEFF;
+            margin: 0 auto; 
         }
 
         .main-visual {
@@ -349,9 +350,32 @@
             text-decoration: underline;
         }
 
+/* 538px～767pxのメディアクエリ */
+        @media (min-width: 539px) and (max-width: 767px) { 
+            .work-card {
+
+            }
+
+            .work-title {
+                font-size: 2.1rem;
+            }
+
+            .work-media img {
+                width: 45.54%;
+                content: url("https://image.mgstage.com/images/prestige/abf/188/pb_e_abf-188.jpg");
+            }
+
+            .work-media video {
+                width: 54.46%;
+            }
+        }
         
-        /* 768px～1024pxのメディアクエリ */
+/* 768px～1024pxのメディアクエリ */
         @media (min-width: 768px) and (max-width: 1024px) {
+
+        .hot-actresses-title {
+             max-width: 70%;
+        }
 
          .main-visual {
              max-width: 70%;
@@ -367,9 +391,45 @@
             font-size: 1.5rem;
         }
 
+            .work-title {
+                font-size: 2.2rem;
+            }
+
+            .work-card {
+                max-width: 80%;
+                padding: 1.5rem;
+            }
+
+            .work-code {
+                font-size: 1.8rem; /0.1rem大きく/
+            }
+
+            .copy-button {
+                font-size: 1.7rem;
+            }
+
+            .work-media img {
+                content: url("https://image.mgstage.com/images/prestige/abf/188/pb_e_abf-188.jpg");
+                width: 45.54%;
+            }
+
+            .work-media video {
+                width: 54.46%;
+            }
+
+            .work-details {
+                font-size: 1.45rem;
+            }
+
+            .javjav-note {
+                font-size: 1.45rem;
+            }
+
+
+
         }
 
-        /* 1025px～pxのメディアクエリ */
+/* 1025px～pxのメディアクエリ */
         @media (min-width: 1025px) {
 
          .main-visual {
@@ -388,6 +448,140 @@
 
         }
        
+/* 1025px～1920pxのメディアクエリ */
+        @media (min-width: 1025px) and (max-width: 1920px){
+
+            .work-title {
+                font-size: 2.2rem;
+            }
+
+            .work-card {
+                max-width: min(80%, 100rem);
+                padding: 1.5rem;
+            }
+
+            .work-code {
+                font-size: 1.9rem; /0.2rem大きく/
+            }
+
+            .work-age-release {
+                font-size: 1.4rem;
+            }
+
+            .copy-button {
+                font-size: 1.8rem;
+            }
+
+            .work-media img {
+                content: url("https://image.mgstage.com/images/prestige/abf/188/pb_e_abf-188.jpg");
+                width: 45.54%;
+            }
+
+            .work-media video {
+                width: 54.46%;
+            }
+
+            .actress-name a {
+                font-size: 1.85rem;
+            }
+
+            .tags-details summary {
+                font-size: 1.7rem;
+            }
+
+            .work-tags {
+                gap: 0.7rem;
+            }
+
+            .work-tag {
+                font-size: 1.5rem;
+            }
+
+            .show-more-details summary {
+                font-size: 1.7rem;
+            }
+
+            .show-note-details summary {
+                font-size: 1.7rem;
+            }
+
+            .work-details {
+                font-size: 1.65rem;
+            }
+
+            .javjav-note {
+                font-size: 1.65rem;
+            }
+
+        }
+
+/* 1921px～pxのメディアクエリ */
+        @media (min-width: 1921px) {
+
+            .work-title {
+                font-size: 2.2rem;
+            }
+
+            .work-card {
+                max-width: min(80%, 110rem;)
+                padding: 1.5rem;
+            }
+
+            .work-code {
+                font-size: 1.9rem; /0.2rem大きく/
+            }
+
+            .work-age-release {
+                font-size: 1.4rem;
+            }
+
+            .copy-button {
+                font-size: 1.8rem;
+            }
+
+            .work-media img {
+                content: url("https://image.mgstage.com/images/prestige/abf/188/pb_e_abf-188.jpg");
+                width: 45.54%;
+            }
+
+            .work-media video {
+                width: 54.46%;
+            }
+
+            .actress-name a {
+                font-size: 1.85rem;
+            }
+
+            .tags-details summary {
+                font-size: 1.7rem;
+            }
+
+            .work-tags {
+                gap: 0.7rem;
+            }
+
+            .work-tag {
+                font-size: 1.5rem;
+            }
+
+            .show-more-details summary {
+                font-size: 1.7rem;
+            }
+
+            .show-note-details summary {
+                font-size: 1.7rem;
+            }
+
+            .work-details {
+                font-size: 1.65rem;
+            }
+
+            .javjav-note {
+                font-size: 1.65rem;
+            }
+
+        }
+
     </style>
 </head>
 <body>
