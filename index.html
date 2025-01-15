@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>メインビジュアルと新着作品</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         html {
             font-size: 62.5%;
@@ -13,6 +14,10 @@
 
         *, *::before, *::after {
             box-sizing: inherit; /* すべての要素が border-box を継承 */
+        }
+        
+        body {
+            margin: 0 0.8rem;
         }
 
         .headerbody {
@@ -137,7 +142,7 @@
         .new-releases-title {
             font-size: 1.5rem;
             font-weight: bold;
-            margin-bottom: 0.2rem;
+            margin-bottom: 0rem;
             margin-top: 1rem;
             text-align: center;
             color: #333;
@@ -388,12 +393,81 @@
             text-decoration: none;
             padding: 0.8rem 0rem;
             margin: 0 auto;
-            background: #FAF0E6;
+            background: #EEFFFF;
         }
 
         .view-more-bottom:hover {
             text-decoration: underline;
         }
+
+        .ad-space {
+            width: 100%;
+            max-width: 728px; /* 広告の一般的なPCサイズを仮定 */
+            height: 90px;    /* 高さも一般的なサイズ */
+            margin: 20px auto;
+            background-color: #ddd; /* 広告の背景色 */
+            text-align: center;
+            line-height: 90px;
+            font-size: 1.6rem;
+            color: #555;
+        }
+
+        .footerbody {
+            margin: 0;
+            padding: 0;
+        }
+
+        .footer {
+            background: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.6rem;
+            color: #333;
+            border-top: 1px solid #ddd;
+        }
+
+        .footer-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .social-links a {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #007acc;
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .copyright {
+            margin-bottom: 10px;
+            color: #666;
+        }
+
 
 /* 538px～767pxのメディアクエリ */
         @media (min-width: 539px) and (max-width: 767px) { 
@@ -1025,10 +1099,50 @@
             <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
         </svg>
       </div>
-</div>
-        </div>
-<a href="new-releases.html" class="view-more-bottom">New Releases Page »</a>
     </div>
+   </div>
+<!-- /作品カード5 -->
+    <a href="new-releases.html" class="view-more-bottom">New Releases Page »</a>
+    </div>
+<!-- /新着作品セクション -->
+
+<!-- 広告スペース -->
+     <div class="ad-space">
+         <p>広告スペース</p>
+     </div>
+<!-- /広告スペース -->
+
+<!-- フッター -->
+<div class="footerbody">
+   <footer class="footer">
+        <div class="footer-content">
+            <!-- SNSリンク -->
+            <div class="social-links">
+                <a href="https://twitter.com/javjav_bigboobs" target="_blank" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://instagram.com/javjav_bigboobs" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://pinterest.com/JAVJAV_Japan" target="_blank" aria-label="Pinterest">
+                    <i class="fab fa-pinterest"></i>
+                </a>
+            </div>
+
+            <!-- コピーライト -->
+            <p class="copyright">© 2025 JAVJAV Big Tits. All rights reserved.</p>
+
+            <!-- 主要リンク -->
+            <ul class="footer-links">
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="terms-of-survice.html">Terms of Service</a></li>
+                <li><a href="contact-us.html">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+</div>
+<!-- /フッター -->
+
     <!-- copyCode関数をDOMContentLoadedの外に移動 -->
  <script>
     document.addEventListener("DOMContentLoaded", () => {
@@ -1120,6 +1234,7 @@
 
 </script>
 
+<script src="https://kit.fontawesome.com/your_kit_id.js" crossorigin="anonymous"></script>
 
 </body>
 </html>
