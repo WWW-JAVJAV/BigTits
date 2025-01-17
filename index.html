@@ -5,10 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>女優一覧テスト</title>
     <style>
-        body {
+         html {
+            font-size: 62.5%;
+            box-sizing: border-box; /* ここで一度指定 */
             font-family: Arial, sans-serif;
-            margin: 0;
+        }
+
+        *, *::before, *::after {
+            box-sizing: inherit; /* すべての要素が border-box を継承 */
+        }
+            body {
+            font-family: Arial, sans-serif;
             padding: 0;
+            margin: 0 0.8rem;
         }
 
         .grid-container {
@@ -16,12 +25,13 @@
             grid-template-columns: repeat(3, 1fr); /* 1行3列 */
             gap: 0.5rem;
             padding: 1rem;
+            background-color: #f4f4f4;
         }
 
         .grid-item {
             aspect-ratio: 5 / 7; /* アスペクト比を5:7に固定 */
             overflow: hidden;
-            border-radius: 8px;
+            border-radius: 6px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
@@ -29,7 +39,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.3s ease;
+            transition: transform 0.2s ease;
         }
 
         .grid-item img:hover {
@@ -48,24 +58,45 @@
         }
 
         .pagination {
-            text-align: center;
-            margin: 2rem 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+            font-size: 1.6rem;
+            flex-wrap: wrap;
         }
 
-        .pagination__pages {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            font-size: 1.2rem;
-            background-color: #007bff;
-            color: #fff;
-            border-radius: 4px;
-            cursor: pointer;
-            text-decoration: none;
+         .pagination__pages {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 5px;
         }
+
+        .pagination__pages span {
+            margin: 0 4px;
+            cursor: pointer;
+            padding: 4px 9px;
+            border-radius: 5px;
+            background: #eee;
+            color: #333;
+        }
+
+        .pagination__pages span.active {
+            background: #007acc;
+            color: white;
+        }
+
+        .pagination__pages span.disabled {
+            pointer-events: none;
+            opacity: 0.6;
+        }
+
     </style>
 </head>
 <body>
 
+<div class="page">
     <!-- 1セット目 -->
     <div class="grid-container">
         <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid1.jpg?raw=true" alt="Sample 1"></div>
@@ -107,15 +138,503 @@
     <div class="ad-space">
         <p>広告スペース</p>
     </div>
+</div>
+
+<div class="page">
+    <!-- 1セット目 二回目-->
+    <div class="grid-container">
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid1.jpg?raw=true" alt="Sample 1"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid2.jpg?raw=true" alt="Sample 2"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid3.jpg?raw=true" alt="Sample 3"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid4.jpg?raw=true" alt="Sample 4"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid5.jpg?raw=true" alt="Sample 5"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid6.jpg?raw=true" alt="Sample 6"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid7.jpg?raw=true" alt="Sample 7"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid8.jpg?raw=true" alt="Sample 8"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid10.jpg?raw=true" alt="Sample 9"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid11.jpg?raw=true" alt="Sample 10"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid12.jpg?raw=true" alt="Sample 11"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid14.jpg?raw=true" alt="Sample 12"></div>
+    </div>
+
+    <!-- セット間広告 -->
+    <div class="ad-space">
+        <p>広告スペース</p>
+    </div>
+
+    <!-- 2セット目 -->
+    <div class="grid-container">
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 13"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 14"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 15"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 16"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 17"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 18"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 19"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 20"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 21"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 22"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 23"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 24"></div>
+    </div>
+
+    <!-- ページ末尾広告 -->
+    <div class="ad-space">
+        <p>広告スペース</p>
+    </div>
+</div>
+
+<div class="page">
+    <!-- 1セット目 3回目-->
+    <div class="grid-container">
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid1.jpg?raw=true" alt="Sample 1"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid2.jpg?raw=true" alt="Sample 2"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid3.jpg?raw=true" alt="Sample 3"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid4.jpg?raw=true" alt="Sample 4"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid5.jpg?raw=true" alt="Sample 5"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid6.jpg?raw=true" alt="Sample 6"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid7.jpg?raw=true" alt="Sample 7"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid8.jpg?raw=true" alt="Sample 8"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid10.jpg?raw=true" alt="Sample 9"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid11.jpg?raw=true" alt="Sample 10"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid12.jpg?raw=true" alt="Sample 11"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid14.jpg?raw=true" alt="Sample 12"></div>
+    </div>
+
+    <!-- セット間広告 -->
+    <div class="ad-space">
+        <p>広告スペース</p>
+    </div>
+
+    <!-- 2セット目 -->
+    <div class="grid-container">
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 13"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 14"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 15"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 16"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 17"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 18"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 19"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 20"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 21"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 22"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 23"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 24"></div>
+    </div>
+
+    <!-- ページ末尾広告 -->
+    <div class="ad-space">
+        <p>広告スペース</p>
+    </div>
+</div>
+
+
+<div class="page">
+    <!-- 1セット目 4回目-->
+    <div class="grid-container">
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid1.jpg?raw=true" alt="Sample 1"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid2.jpg?raw=true" alt="Sample 2"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid3.jpg?raw=true" alt="Sample 3"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid4.jpg?raw=true" alt="Sample 4"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid5.jpg?raw=true" alt="Sample 5"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid6.jpg?raw=true" alt="Sample 6"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid7.jpg?raw=true" alt="Sample 7"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid8.jpg?raw=true" alt="Sample 8"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid10.jpg?raw=true" alt="Sample 9"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid11.jpg?raw=true" alt="Sample 10"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid12.jpg?raw=true" alt="Sample 11"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid14.jpg?raw=true" alt="Sample 12"></div>
+    </div>
+
+    <!-- セット間広告 -->
+    <div class="ad-space">
+        <p>広告スペース</p>
+    </div>
+
+    <!-- 2セット目 -->
+    <div class="grid-container">
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 13"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 14"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 15"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 16"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 17"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 18"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 19"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 20"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 21"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 22"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 23"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 24"></div>
+    </div>
+
+    <!-- ページ末尾広告 -->
+    <div class="ad-space">
+        <p>広告スペース</p>
+    </div>
+</div>
+
+<div class="page">
+    <!-- 1セット目 5回目-->
+    <div class="grid-container">
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid1.jpg?raw=true" alt="Sample 1"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid2.jpg?raw=true" alt="Sample 2"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid3.jpg?raw=true" alt="Sample 3"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid4.jpg?raw=true" alt="Sample 4"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid5.jpg?raw=true" alt="Sample 5"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid6.jpg?raw=true" alt="Sample 6"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid7.jpg?raw=true" alt="Sample 7"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid8.jpg?raw=true" alt="Sample 8"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid10.jpg?raw=true" alt="Sample 9"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid11.jpg?raw=true" alt="Sample 10"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid12.jpg?raw=true" alt="Sample 11"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid14.jpg?raw=true" alt="Sample 12"></div>
+    </div>
+
+    <!-- セット間広告 -->
+    <div class="ad-space">
+        <p>広告スペース</p>
+    </div>
+
+    <!-- 2セット目 -->
+    <div class="grid-container">
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 13"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 14"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 15"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 16"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 17"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 18"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 19"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 20"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 21"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 22"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 23"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 24"></div>
+    </div>
+
+    <!-- ページ末尾広告 -->
+    <div class="ad-space">
+        <p>広告スペース</p>
+    </div>
+</div>
+
+<div class="page">
+    <!-- 1セット目 6回目-->
+    <div class="grid-container">
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid1.jpg?raw=true" alt="Sample 1"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid2.jpg?raw=true" alt="Sample 2"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid3.jpg?raw=true" alt="Sample 3"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid4.jpg?raw=true" alt="Sample 4"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid5.jpg?raw=true" alt="Sample 5"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid6.jpg?raw=true" alt="Sample 6"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid7.jpg?raw=true" alt="Sample 7"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid8.jpg?raw=true" alt="Sample 8"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid10.jpg?raw=true" alt="Sample 9"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid11.jpg?raw=true" alt="Sample 10"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid12.jpg?raw=true" alt="Sample 11"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid14.jpg?raw=true" alt="Sample 12"></div>
+    </div>
+
+    <!-- セット間広告 -->
+    <div class="ad-space">
+        <p>広告スペース</p>
+    </div>
+
+    <!-- 2セット目 -->
+    <div class="grid-container">
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 13"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 14"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 15"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 16"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 17"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 18"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 19"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 20"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 21"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 22"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 23"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 24"></div>
+    </div>
+
+    <!-- ページ末尾広告 -->
+    <div class="ad-space">
+        <p>広告スペース</p>
+    </div>
+</div>
+
+<div class="page">
+    <!-- 1セット目 7回目-->
+    <div class="grid-container">
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid1.jpg?raw=true" alt="Sample 1"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid2.jpg?raw=true" alt="Sample 2"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid3.jpg?raw=true" alt="Sample 3"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid4.jpg?raw=true" alt="Sample 4"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid5.jpg?raw=true" alt="Sample 5"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid6.jpg?raw=true" alt="Sample 6"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid7.jpg?raw=true" alt="Sample 7"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid8.jpg?raw=true" alt="Sample 8"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid10.jpg?raw=true" alt="Sample 9"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid11.jpg?raw=true" alt="Sample 10"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid12.jpg?raw=true" alt="Sample 11"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid14.jpg?raw=true" alt="Sample 12"></div>
+    </div>
+
+    <!-- セット間広告 -->
+    <div class="ad-space">
+        <p>広告スペース</p>
+    </div>
+
+    <!-- 2セット目 -->
+    <div class="grid-container">
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 13"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 14"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 15"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 16"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 17"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 18"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 19"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 20"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 21"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 22"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 23"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 24"></div>
+    </div>
+
+    <!-- ページ末尾広告 -->
+    <div class="ad-space">
+        <p>広告スペース</p>
+    </div>
+</div>
+
+<div class="page">
+    <!-- 1セット目 8回目-->
+    <div class="grid-container">
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid1.jpg?raw=true" alt="Sample 1"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid2.jpg?raw=true" alt="Sample 2"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid3.jpg?raw=true" alt="Sample 3"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid4.jpg?raw=true" alt="Sample 4"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid5.jpg?raw=true" alt="Sample 5"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid6.jpg?raw=true" alt="Sample 6"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid7.jpg?raw=true" alt="Sample 7"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid8.jpg?raw=true" alt="Sample 8"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid10.jpg?raw=true" alt="Sample 9"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid11.jpg?raw=true" alt="Sample 10"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid12.jpg?raw=true" alt="Sample 11"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid14.jpg?raw=true" alt="Sample 12"></div>
+    </div>
+
+    <!-- セット間広告 -->
+    <div class="ad-space">
+        <p>広告スペース</p>
+    </div>
+
+    <!-- 2セット目 -->
+    <div class="grid-container">
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 13"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 14"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 15"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 16"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 17"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 18"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 19"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 20"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 21"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 22"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 23"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 24"></div>
+    </div>
+
+    <!-- ページ末尾広告 -->
+    <div class="ad-space">
+        <p>広告スペース</p>
+    </div>
+</div>
+
+<div class="page">
+    <!-- 1セット目 9回目-->
+    <div class="grid-container">
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid1.jpg?raw=true" alt="Sample 1"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid2.jpg?raw=true" alt="Sample 2"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid3.jpg?raw=true" alt="Sample 3"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid4.jpg?raw=true" alt="Sample 4"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid5.jpg?raw=true" alt="Sample 5"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid6.jpg?raw=true" alt="Sample 6"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid7.jpg?raw=true" alt="Sample 7"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid8.jpg?raw=true" alt="Sample 8"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid10.jpg?raw=true" alt="Sample 9"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid11.jpg?raw=true" alt="Sample 10"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid12.jpg?raw=true" alt="Sample 11"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid14.jpg?raw=true" alt="Sample 12"></div>
+    </div>
+
+    <!-- セット間広告 -->
+    <div class="ad-space">
+        <p>広告スペース</p>
+    </div>
+
+    <!-- 2セット目 -->
+    <div class="grid-container">
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 13"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 14"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 15"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 16"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 17"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 18"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 19"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 20"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 21"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 22"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 23"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/150x210" alt="Sample 24"></div>
+    </div>
+
+    <!-- ページ末尾広告 -->
+    <div class="ad-space">
+        <p>広告スペース</p>
+    </div>
+</div>
+
+<div class="page">
+    <!-- 1セット目 10回目-->
+    <div class="grid-container">
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid1.jpg?raw=true" alt="Sample 1"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid2.jpg?raw=true" alt="Sample 2"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid3.jpg?raw=true" alt="Sample 3"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid4.jpg?raw=true" alt="Sample 4"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid5.jpg?raw=true" alt="Sample 5"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid6.jpg?raw=true" alt="Sample 6"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid7.jpg?raw=true" alt="Sample 7"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid8.jpg?raw=true" alt="Sample 8"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid10.jpg?raw=true" alt="Sample 9"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid11.jpg?raw=true" alt="Sample 10"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid12.jpg?raw=true" alt="Sample 11"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid14.jpg?raw=true" alt="Sample 12"></div>
+    </div>
+
+    <!-- セット間広告 -->
+    <div class="ad-space">
+        <p>広告スペース</p>
+    </div>
+
+    <!-- 2セット目 -->
+    <div class="grid-container">
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid1.jpg?raw=true" alt="Sample 1"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid2.jpg?raw=true" alt="Sample 2"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid3.jpg?raw=true" alt="Sample 3"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid4.jpg?raw=true" alt="Sample 4"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid5.jpg?raw=true" alt="Sample 5"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid6.jpg?raw=true" alt="Sample 6"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid7.jpg?raw=true" alt="Sample 7"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid8.jpg?raw=true" alt="Sample 8"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid10.jpg?raw=true" alt="Sample 9"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid11.jpg?raw=true" alt="Sample 10"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid12.jpg?raw=true" alt="Sample 11"></div>
+        <div class="grid-item"><img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid14.jpg?raw=true" alt="Sample 12"></div>
+    </div>
+
+    <!-- ページ末尾広告 -->
+    <div class="ad-space">
+        <p>広告スペース</p>
+    </div>
+</div>
 
     <!-- ページネーション -->
-    <nav class="pagination">
-        <span class="pagination__pages">&laquo; 前へ</span>
-        <span class="pagination__pages">1</span>
-        <span class="pagination__pages">2</span>
-        <span class="pagination__pages">3</span>
-        <span class="pagination__pages">次へ &raquo;</span>
-    </nav>
+<nav class="pagination">
+    <span class="pagination__pages"></span>
+</nav>
+
+<script> 
+// **ページネーション**
+const pages = document.querySelectorAll(".page");
+const totalPages = pages.length;
+const paginationContainer = document.querySelector(".pagination__pages");
+let currentPage = 1;
+
+// **クエリパラメータの更新**
+function updateURL(page) {
+    const params = new URLSearchParams(window.location.search);
+    params.set('page', page);
+    history.pushState({}, '', `${window.location.pathname}?${params.toString()}`);
+}
+
+function createPagination(currentPage, totalPages) {
+    paginationContainer.innerHTML = '';
+
+    // **「＜」ボタン**
+    if (currentPage > 1) {
+        paginationContainer.innerHTML += `<span class="page-link" data-page="${currentPage - 1}">&lt;</span>`;
+    } else {
+        paginationContainer.innerHTML += `<span class="page-link disabled">&lt;</span>`;
+    }
+
+    // **最初のページ**
+    if (currentPage > 2) {
+        paginationContainer.innerHTML += `<span class="page-link" data-page="1">1</span>`;
+    }
+
+    // **左側の省略記号**
+    if (currentPage > 3) {
+        paginationContainer.innerHTML += `<span class="ellipsis">...</span>`;
+    }
+
+    // **中央のページ番号**
+    const startPage = Math.max(1, currentPage - 1); 
+    const endPage = Math.min(totalPages, currentPage + 1);
+
+    for (let i = startPage; i <= endPage; i++) {
+        if (i === currentPage) {
+            paginationContainer.innerHTML += `<span class="page-link active" data-page="${i}">${i}</span>`;
+        } else {
+            paginationContainer.innerHTML += `<span class="page-link" data-page="${i}">${i}</span>`;
+        }
+    }
+
+    // **右側の省略記号**
+    if (currentPage < totalPages - 2) {
+        paginationContainer.innerHTML += `<span class="ellipsis">...</span>`;
+    }
+
+    // **最後のページ**
+    if (currentPage < totalPages - 1) {
+        paginationContainer.innerHTML += `<span class="page-link" data-page="${totalPages}">${totalPages}</span>`;
+    }
+
+    // **「＞」ボタン**
+    if (currentPage < totalPages) {
+        paginationContainer.innerHTML += `<span class="page-link" data-page="${currentPage + 1}">&gt;</span>`;
+    } else {
+        paginationContainer.innerHTML += `<span class="page-link disabled">&gt;</span>`;
+    }
+
+    paginationContainer.querySelectorAll(".page-link:not(.disabled)").forEach((link) => {
+        link.addEventListener("click", () => {
+            const selectedPage = parseInt(link.dataset.page, 10);
+            if (selectedPage !== currentPage) {
+                showPage(selectedPage);
+            }
+        });
+    });
+}
+
+function showPage(page) {
+    pages.forEach((p, index) => {
+        p.style.display = index === page - 1 ? "block" : "none";
+    });
+
+    createPagination(page, totalPages);
+    currentPage = page;
+
+    // **URLを更新**
+    updateURL(page);
+}
+
+// **クエリパラメータからページを取得して初期化**
+const params = new URLSearchParams(window.location.search);
+const initialPage = parseInt(params.get('page')) || 1;
+
+createPagination(initialPage, totalPages);
+showPage(initialPage);
+
+</script>
 
 </body>
 </html>
