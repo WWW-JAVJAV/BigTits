@@ -21,6 +21,41 @@
             margin: 0 0.8rem;
         }
 
+        .name-container {
+            background-color: #EEEEEE;  
+            box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
+            margin-right: 0.4rem;
+            padding: 0.1rem;
+            margin-top: 0.2rem;
+        }
+
+        .name-container h1 {
+            font-size: 1.6rem;
+            margin-top: 0.1rem;
+            margin-bottom: 0.1rem;
+            font-weight: normal; /* 太字を解除 */
+        }
+
+        .name-container h1 span {
+            font-size: 1.6rem;
+            margin-top: 0.1rem;
+            margin-bottom: 0.1rem;
+            font-weight: bold;
+        }
+
+        .name-container p {
+            font-size: 1.6rem;
+            margin-top: 0.1rem;
+            margin-bottom: 0.1rem
+        }
+
+        .name-container p span {
+            font-size: 1.6rem;
+            margin-top: 0.1rem;
+            margin-bottom: 0.1rem;
+            font-weight: bold;
+        }
+
         .profile-container {
             display: flex;
             gap: 0.7rem;
@@ -44,44 +79,12 @@
         }
 
         .info-section {
-            flex: 1.4;
+            flex: 1.35;
             display: flex;
-            flex-direction: column;   
-        }
-
-        .name-container {
-            background-color: #EEEEEE;  
+            flex-direction: column;
             box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
-            margin-right: 0.4rem;
-            padding: 0.1rem;
-            margin-top: 0.2rem;
-        }
-
-        .name-container h1 {
-            font-size: 1.2rem;
-            margin-top: 0.1rem;
-            margin-bottom: 0.1rem;
-            font-weight: normal; /* 太字を解除 */
-        }
-
-        .name-container h1 span {
-            font-size: 1.2rem;
-            margin-top: 0.1rem;
-            margin-bottom: 0.1rem;
-            font-weight: bold;
-        }
-
-        .name-container p {
-            font-size: 1.2rem;
-            margin-top: 0.1rem;
-            margin-bottom: 0.1rem
-        }
-
-        .name-container p span {
-            font-size: 1.2rem;
-            margin-top: 0.1rem;
-            margin-bottom: 0.1rem;
-            font-weight: bold;
+            margin: 0.2rem;
+            font-size: 1.1rem;   
         }
 
         .info-section ul {
@@ -119,7 +122,11 @@
     </style>
 </head>
 <body>
-
+<div class="name-container">
+            <h1><span>Rara Anzai </span>/ 安齋らら</h1>
+            <p><span>RION </span>/ RION</p>
+            <p><span>Shion Utsunomiya </span>/ 宇都宮しをん<p>
+            </div>
     <div class="profile-container">
         <!-- 写真 -->
         <div class="photo-section">
@@ -127,11 +134,7 @@
         </div>
         <!-- プロフィール情報 -->
         <div class="info-section">
-            <div class="name-container">
-            <h1><span>Rara Anzai </span>/ 安齋らら</h1>
-            <p><span>RION </span>/ RION</p>
-            <p><span>Shion Utsunomiya </span>/ 宇都宮しをん<p>
-            </div>
+            
             <ul>
                 <li><span>Status:</span> Retired (2008 ∼ 2022)</li>
                 <li><span>Measurements:</span> B110 (J) / W60 / H90</li>
