@@ -21,6 +21,12 @@
             margin: 0 0.8rem;
         }
 
+        .container {
+            margin-top: 0.3rem;
+            border: 0.1rem solid #000000;
+            background-color: #f4f4f4;
+        }
+
         .name-container {
             background-color: #FFEEFF;  
             box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
@@ -81,7 +87,8 @@
             box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
             font-size: 1.3rem;
             border-radius: 6px;
-            padding: 0.3rem;   
+            padding: 0.3rem; 
+            background-color: #fff;  
         }
 
         .info-section ul {
@@ -103,30 +110,6 @@
             padding: 0.5rem;
         }
 
-        .sns-icons {
-    display: flex;
-    gap: 1rem;
-}
-
-.sns-icons a {
-    font-size: 2.4rem; /* アイコンサイズ */
-    color: #555;
-    text-decoration: none;
-    padding: 0.8rem;
-    border-radius: 50%;
-    background-color: #f9f9f9;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.sns-icons a:hover {
-    color: white;
-    background-color: #007acc;
-}
-
-
         .javjav-note {
             margin-top: 2rem;
         }
@@ -147,6 +130,7 @@
     </style>
 </head>
 <body>
+<div class="container">
 <div class="name-container">
             <h1><span>Rara Anzai </span>/ 安齋らら</h1>
             <p><span>RION </span>/ RION</p>
@@ -167,17 +151,10 @@
                 <li><span>DOB:</span> May 1, 1998</li>
                 <li><span>Age:</span> 33</li>
                 <li><span>SNS:</span> <a href="#">Twitter</a>, <a href="#">Instagram</a>, <a href="#">Onlyfans</a>, <a href="#">Youtube</a>, <a href="#">Youtube</a></li>
-<div class="sns-icons">
-    <a href="https://twitter.com/javjav_bigboobs" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-    <a href="#" aria-label="OnlyFans"><i class="fab fa-onlyfans"></i></a>
-    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-</div>
-
             </ul>
         </div>
     </div>
- 
+  </div>
     <!-- JAVJAVNOTE -->
     <div class="javjav-note">
         <button onclick="toggleNote()">JAVJAVNOTE ▼</button>
@@ -196,7 +173,5 @@
             }
         }
     </script>
-<script src="https://kit.fontawesome.com/your_kit_id.js" crossorigin="anonymous"></script>
-
 </body>
 </html>
