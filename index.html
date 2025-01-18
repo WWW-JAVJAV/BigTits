@@ -26,8 +26,8 @@
             gap: 0.7rem;
             align-items: stretch; /* 高さを揃える */
             border: 0.1rem solid #000;
-            margin-top: 0.4rem;
-            margin-bottom: 0.5rem;
+            margin: 0.4rem auto;
+            max-width: 34.5rem;
         }
 
         .photo-section {
@@ -40,35 +40,55 @@
             height: auto;
             border-radius: 8px;
             aspect-ratio: 5 / 7; /* アスペクト比を5:7に固定 */
-            margin-top: 0.1rem;
-            margin-bottom: 0.1rem;
+            margin: 0.1rem;
             
         }
 
         .info-section {
             flex: 1.5;
             display: flex;
-            flex-direction: column;
-            justify-content: space-between; /* 必要に応じて調整 */    
+            flex-direction: column;   
         }
 
         .name-container {
-            background-color: #f9f9f9;  
+            background-color: #EEEEEE;  
             box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
-            margin-right: 0.2rem;
-            
+            margin-right: 0.4rem;
+            padding: 0.1rem;
+            margin-top: 0.2rem;
         }
 
-        .name-container h5 {
-            font-size: 1.0rem;
+        .name-container h1 {
+            font-size: 1.2rem;
+            margin-top: 0.1rem;
+            margin-bottom: 0.1rem;
+            font-weight: normal; /* 太字を解除 */
+        }
+
+        .name-container h1 span {
+            font-size: 1.2rem;
+            margin-top: 0.1rem;
+            margin-bottom: 0.1rem;
+            font-weight: bold;
+        }
+
+        .name-container p {
+            font-size: 1.2rem;
             margin-top: 0.1rem;
             margin-bottom: 0.1rem
+        }
+
+        .name-container p span {
+            font-size: 1.2rem;
+            margin-top: 0.1rem;
+            margin-bottom: 0.1rem;
+            font-weight: bold;
         }
 
         .info-section ul {
             list-style: none;
             padding: 0;
-            margin-top: 0rem;
+            margin-top: 0.5rem;
             margin-bottom: 0rem;
         }
 
@@ -109,18 +129,17 @@
         <!-- プロフィール情報 -->
         <div class="info-section">
             <div class="name-container">
-            <h5>Rara Anzai / 安齋らら</h5>
-            <h5>RION / RION</h5>
-            <h5>Shion Utsunomiya / 宇都宮しをん<h5>
+            <h1><span>Rara Anzai </span>/ 安齋らら</h1>
+            <p><span>RION </span>/ RION</p>
+            <p><span>Shion Utsunomiya </span>/ 宇都宮しをん<p>
             </div>
             <ul>
-                <li><span>Status:</span> Retired(2008∼2022)</li>
-                <li><span>Measurements:</span> B110 / W60 / H90</li>
-                <li><span>Cup Size:</span> J</li>
+                <li><span>Status:</span> Retired (2008 ∼ 2022)</li>
+                <li><span>Measurements:</span> B110 (J) / W60 / H90</li>
                 <li><span>Height:</span> 160 cm (5'3")</li>
-                <li><span>生年月日:</span> 1998/05/01</li>
+                <li><span>Date of Birth:</span> May 1, 1998</li>
                 <li><span>Age:</span> 33</li>
-                <li><span>SNS</span> <a href="#">Twitter</a>, <a href="#">Instagram</a></li>
+                <li><span>SNS</span> <a href="#">Twitter</a>, <a href="#">Instagram</a>, <a href="#">Onlyfans</a>, <a href="#">Youtube</a>, <a href="#">Youtube</a></li>
             </ul>
         </div>
     </div>
