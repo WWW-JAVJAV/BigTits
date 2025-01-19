@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>女優専門ページ</title>
     <style>
 
@@ -27,24 +28,27 @@
         }
 
         .name-container {
-            background-color: #FFEEFF;  
-            box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
-            padding: 0.1rem;
-            margin: 0.2rem auto;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+            color: #333;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            font-family: initial;
+            background-color: #FFEEFF;
+            margin: 0 auto; 
         }
 
         .name-container h1 {
             font-size: 1.6rem;
             margin: 0.2rem;
             margin-bottom: 0.1rem;
-            font-weight: normal; /* 太字を解除 */
         }
 
         .name-container h1 span {
             font-size: 1.6rem;
             margin: 0.2rem;
             margin-bottom: 0.1rem;
-            font-weight: bold;
         }
 
         .name-container p {
@@ -57,37 +61,36 @@
             font-size: 1.6rem;
             margin: 0.2rem;
             margin-bottom: 0.1rem;
-            font-weight: bold;
         }
 
         .profile-container {
-            display: flex;
-            gap: 0.4rem;
-            align-items: stretch; /* 高さを揃える */
             margin: 0.4rem auto;
         }
 
         .photo-section {
-            flex: 1;
+            max-width: 80%;
+            margin: 0rem auto;
         }
 
         .photo-section img {
             width: 100%;
             height: auto;
-            border-radius: 6px;
+            border-radius: 2px;
             aspect-ratio: 5 / 7; /* アスペクト比を5:7に固定 */
             
         }
 
         .info-section {
-            flex: 1.35;
             display: flex;
             flex-direction: column;
             box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             border-radius: 6px;
-            padding: 0.3rem; 
-            background-color: #fff;  
+            padding: 0.5rem; 
+            background-color: #fff;
+            max-width: 95%;
+            margin: 0 auto;
+            text-align: center; 
         }
 
         .info-section ul {
@@ -106,8 +109,38 @@
         }
 
         .info-section ul li a {
-            padding: 0.5rem;
+            display: inline-block;
+            margin: 0 0.5rem; /* アイコン間のスペース */
+            font-size: 2rem; /* アイコンサイズ */
+            color: #555; /* アイコンの初期色 */
+            transition: color 0.3s ease;
         }
+
+        .sns-buttons {
+            display: flex;
+            flex-wrap: wrap; /* 複数行に対応 */
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+            justify-content: center; /* ボタンを中央揃え */
+        }
+
+        .sns-button {
+            display: inline-block;
+            padding: 0.6rem 1rem;
+            font-size: 1.2rem;
+            text-decoration: none;
+            color: black;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            background-color: #f4f4f4;
+            font-weight: bold;
+        }
+
+        .sns-button:hover {
+            opacity: 0.8;
+        }
+        
 
         .javjav-note {
             margin-top: 2rem;
@@ -121,12 +154,14 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            background-color: #1DA1F2;
         }
 
         .javjav-note button:hover {
             background-color: #005f99;
         }
     </style>
+<script src="https://kit.fontawesome.com/your_kit_id.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <div class="container">
@@ -138,18 +173,29 @@
     <div class="profile-container">
         <!-- 写真 -->
         <div class="photo-section">
-            <img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/grid12.jpg?raw=true" alt="女優の名前">
+            <img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/syunga2.jpg?raw=true" alt="女優の名前">
         </div>
         <!-- プロフィール情報 -->
         <div class="info-section">
             
             <ul>
-                <li><span>Retired:</span> (2008 ∼ 2022)</span></li>
-                <li><span>BWH:</span> B110 (J) / W60 / H90</li>
+                <li><span>Status:</span> Retired (2008 ∼ 2022)</span></li>
+                <li><span>Measurements:</span> B110 (J) / W60 / H90</li>
                 <li><span>Height:</span> 160 cm (5'3")</li>
-                <li><span>DOB:</span> May 1, 1998</li>
+                <li><span>Date of Birth:</span> May 1, 1998</li>
                 <li><span>Age:</span> 33</li>
-                <li><span>SNS:</span> <a href="#">Twitter</a>, <a href="#">Instagram</a>, <a href="#">Onlyfans</a>, <a href="#">Youtube</a>, <a href="#">Youtube</a></li>
+                <li><span>SNS:</span> 
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                                    </li>
+                <li><span>Other:</span></li>
+                 <div class="sns-buttons">
+                    <a href="#" class="sns-button fantia">Fantia</a>
+                    <a href="#" class="sns-button linktree">Linktree</a>
+                    <a href="#" class="sns-button onlyfans">OnlyFans</a>
+                    <a href="#" class="sns-button site">Site</a>
+                 </div>
             </ul>
         </div>
     </div>
