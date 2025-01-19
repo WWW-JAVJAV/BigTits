@@ -29,7 +29,7 @@
         }
 
         .name-container {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: bold;
             text-align: center;
             color: #333;
@@ -162,8 +162,8 @@
             background-color: #005f99;
         }
 
-/* 768px～1024pxのメディアクエリ */
-        @media (min-width: 400px) {
+/* 400px~767pxのメディアクエリ */
+        @media (min-width: 400px) and (max-width: 767px) {
              .photo-section {
                  max-width: min(70%, 40rem);
              }
@@ -171,9 +171,39 @@
              .info-section {
                  font-size: 1.4rem;
              }
-
         }
 
+/* 768px~1024pxのメディアクエリ */
+        @media (min-width: 768px) and (max-width: 1024px) {
+
+             .container {
+                 max-width: 76.8rem;
+                 margin: 0 auto;
+             }
+
+             .name-container h1 {
+                 font-size: 1.7rem;
+             }
+
+             .name-container h1 span {
+                 font-size: 1.7rem;
+             }
+
+             .name-container p {
+                 font-size: 1.7rem;
+             }
+
+             .name-container p span {
+                  font-size: 1.7rem;
+             }
+             .photo-section {
+                 max-width: min(70%, 40rem);
+             }
+
+             .info-section {
+                 font-size: 1.5rem;
+             }
+        }
     </style>
 <script src="https://kit.fontawesome.com/your_kit_id.js" crossorigin="anonymous"></script>
 </head>
