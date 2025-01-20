@@ -25,7 +25,6 @@
         .container {
             margin-top: 0.3rem;
             background-color: #f4f4f4;
-            border: 0.1rem solid #000;
         }
 
         .name-container {
@@ -87,7 +86,7 @@
             box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
             font-size: 1.3rem;
             border-radius: 6px;
-            padding: 0.5rem; 
+            padding: 0.7rem; 
             background-color: #fff;
             max-width: 95%;
             margin: 0.3rem auto;
@@ -121,7 +120,7 @@
             display: flex;
             flex-wrap: wrap; /* 複数行に対応 */
             gap: 0.5rem;
-            margin-top: 0.5rem;
+            margin-top: 0rem;
             justify-content: center; /* ボタンを中央揃え */
         }
 
@@ -141,14 +140,20 @@
         .sns-button:hover {
             opacity: 0.8;
         }
-        
 
-        .javjav-note {
-            margin-top: 2rem;
+         .other {
+            font-weight: bold;
+         }
+
+        .javjav-note2 {
+            margin-top: 1rem; /* 上の余白 */
+            margin-left: auto; /* 左右の中央寄せ */
+            margin-right: auto;
+            text-align: center; /* ボタンを中央に揃える */
         }
 
-        .javjav-note button {
-            padding: 0.8rem 1.6rem;
+        .javjav-note2 button {
+            padding: 0.8rem 1.8rem;
             font-size: 1.2rem;
             background-color: #007acc;
             color: white;
@@ -158,7 +163,7 @@
             background-color: #1DA1F2;
         }
 
-        .javjav-note button:hover {
+        .javjav-note2 button:hover {
             background-color: #005f99;
         }
 
@@ -171,6 +176,15 @@
              .info-section {
                  font-size: 1.4rem;
              }
+
+            .sns-button {
+                 font-size: 1.3rem;
+             }
+
+            .sns-buttons {
+                 gap: 0.6rem;
+             }
+
         }
 
 /* 768px~1024pxのメディアクエリ */
@@ -203,7 +217,55 @@
              .info-section {
                  font-size: 1.5rem;
              }
+             .sns-button {
+                 font-size: 1.4rem;
+             }
+
+             .sns-buttons {
+                 gap: 0.7rem;
+             }
+
         }
+/* 1025px～pxのメディアクエリ */
+        @media (min-width: 1025px) {
+             .container {
+                 max-width: 76.8rem;
+                 margin: 0 auto;
+             }
+
+             .name-container h1 {
+                 font-size: 1.7rem;
+             }
+
+             .name-container h1 span {
+                 font-size: 1.7rem;
+             }
+
+             .name-container p {
+                 font-size: 1.7rem;
+             }
+
+             .name-container p span {
+                  font-size: 1.7rem;
+             }
+             .photo-section {
+                 max-width: min(70%, 40rem);
+             }
+
+             .info-section {
+                 font-size: 1.5rem;
+             }
+
+             .sns-button {
+                 font-size: 1.4rem;
+             }
+
+             .sns-buttons {
+                 gap: 0.7rem;
+             }
+             
+        }
+
     </style>
 <script src="https://kit.fontawesome.com/your_kit_id.js" crossorigin="anonymous"></script>
 </head>
@@ -233,24 +295,24 @@
                     <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                                     </li>
-                <li><span>Other:</span></li>
-                 <div class="sns-buttons">
+                <li class="other">Other:</li>
+            </ul><div class="sns-buttons">
                     <a href="#" class="sns-button fantia">Fantia</a>
                     <a href="#" class="sns-button linktree">Linktree</a>
                     <a href="#" class="sns-button onlyfans">OnlyFans</a>
                     <a href="#" class="sns-button site">Site</a>
                  </div>
-            </ul>
-        </div>
-    
-  </div>
+
     <!-- JAVJAVNOTE -->
-    <div class="javjav-note">
-        <button onclick="toggleNote()">JAVJAVNOTE ▼</button>
+    <div class="javjav-note2">
+        <button onclick="toggleNote()">JAVJAV NOTE ▼</button>
         <div id="note-content" style="display: none; margin-top: 1rem;">
-            <p>ここにJAVJAVNOTEの内容が表示されます。</p>
+            <p>ここにJAVJAVNOTEの内容が表示されます。まじで金にならないことをずっとやっていて頭おかしくなってしまうな本当は日本株のデイトレなどをやるべきなのにな。まあこれが一息ついたらやろうか。全て終わらす。</p>
         </div>
     </div>
+   </div>
+  </div>
+ 
 
     <script>
         function toggleNote() {
