@@ -2544,6 +2544,10 @@ document.addEventListener("DOMContentLoaded", () => {
         // **containerの表示を更新**
         updateContainerVisibility(page);
 
+        // **ページトップへ移動**
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+
         // **URLを更新**
         updateURL(page);
     }
