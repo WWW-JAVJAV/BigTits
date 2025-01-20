@@ -210,6 +210,8 @@
 
 
         #note-content {
+            font-size: 1.35rem;
+            color: #333;
             max-width: 90%;
             margin: 0 auto;
             overflow-wrap: break-word; 
@@ -675,6 +677,10 @@
                  gap: 0.8rem;
              }
 
+             #note-content {
+                 font-size: 1.45rem;
+             }
+
             .work-title {
                 font-size: 2.2rem;
             }
@@ -758,11 +764,11 @@
              }
 
              .info-section {
-                 font-size: 1.5rem;
+                 font-size: 1.6rem;
              }
 
              .sns-button {
-                 font-size: 1.4rem;
+                 font-size: 1.5rem;
              }
 
              .sns-buttons {
@@ -779,6 +785,9 @@
 
 /* 1025px～1920pxのメディアクエリ */
         @media (min-width: 1025px) and (max-width: 1920px){
+             #note-content {
+                 font-size: 1.65rem;
+             }
 
             .work-title {
                 font-size: 2.2rem;
@@ -850,6 +859,11 @@
 
 /* 1921px～pxのメディアクエリ */
         @media (min-width: 1921px) {
+
+             #note-content {
+                 font-size: 1.65rem;
+             }
+
 
             .work-title {
                 font-size: 2.2rem;
@@ -2446,7 +2460,20 @@ document.addEventListener("DOMContentLoaded", () => {
         params.set('page', page);
         history.pushState({}, '', `${window.location.pathname}?${params.toString()}`);
     }
+    // **containerの表示を切り替える**
+    function updateContainerVisibility(page) {
+        const containerElement = document.querySelector(".container");
+        if (containerElement) {
+            if (page > 1) {
+                containerElement.style.display = "none";
+            } else {
+                containerElement.style.display = "block";
+            }
+        }
+    }
 
+
+    // **ページネーションの作成**
     function createPagination(currentPage, totalPages) {
         paginationContainer.innerHTML = '';
 
@@ -2513,6 +2540,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         createPagination(page, totalPages);
         currentPage = page;
+
+        // **containerの表示を更新**
+        updateContainerVisibility(page);
 
         // **URLを更新**
         updateURL(page);
