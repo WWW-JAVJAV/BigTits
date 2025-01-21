@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>タグ一覧ページ</title>
     <link rel="stylesheet" href="styles.css">
 <style>
@@ -22,6 +23,50 @@
         margin: 0 0.8rem;
     }
 
+/* ヘッダー */
+        .headerbody {
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            padding: 10px 0;
+            background: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .logo {
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .nav-menu {
+            display: flex;
+            justify-content: space-between;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            background: #f0f0f0;
+            margin: 0 auto;
+        }
+
+        .nav-menu li {
+            flex-basis: 25%;
+            text-align: center;
+            border: 2px solid #FFF;
+        }
+
+        .nav-menu a {
+            display: block;
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 0;
+        }
+/* ヘッダー */
 
     .actresses-title {
         font-size: 1.5rem;
@@ -37,7 +82,7 @@
 
     .tag-list-page {
         max-width: 1200px;
-        margin: 0 auto;
+        margin: 0 auto 5rem;
         padding: 5px;
     }
 
@@ -50,7 +95,7 @@
         display: inline-block; /* 背景色を文字数に合わせる */
         text-align: center;
         font-size: 20px;
-        margin: 40px 0 0;
+        margin: 4rem 0 0.5rem;
         color: #333;
         padding: 0.3rem 1rem;
         background-color: #F5FFFA;
@@ -63,10 +108,10 @@
         border-top: 2px solid #ddd;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 7px;
+        gap: 5px;
         margin-top: 0px;
         background: #f4f4f4;
-        padding: 0.6rem;
+        padding: 0.4rem;
     }
 
     .grid-item {
@@ -97,9 +142,136 @@
         margin: 0.2rem;
      }
 
+/* フッター */
+        .footerbody {
+            margin: 0;
+            padding: 0;
+        }
+
+        .footer {
+            background: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.6rem;
+            color: #333;
+            border-top: 1px solid #ddd;
+        }
+
+        .footer-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .social-links a {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #007acc;
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .copyright {
+            margin-bottom: 10px;
+            color: #666;
+        }
+/* フッター */
+
+/* 768px～1024pxのメディアクエリ */
+        @media (min-width: 768px) and (max-width: 1024px) {
+
+        .logo {
+            max-width: 80%;
+        }
+
+        .nav-menu {
+            max-width: 80%;
+        }
+
+        .actresses-title {
+             max-width: 80%;
+        }
+
+         .category-section {
+             max-width: 80%;
+             margin: 0 auto;
+         }
+
+        .tag-name {
+             font-size: 12px;
+         }
+
+        }
+
+/* 1025px～pxのメディアクエリ */
+        @media (min-width: 1025px) {
+
+         .logo {
+             max-width: min(80%, 100rem);
+         }
+
+         .nav-menu {
+             max-width: min(80%, 100rem);
+         }
+
+         .nav-menu a {
+             font-size: 18px;
+         }
+
+         .actresses-title {
+             max-width: min(70%, 90rem);
+         }
+
+         .category-section {
+             max-width: min(70%, 90rem);
+             margin: 0 auto;
+         }
+
+        .tag-name {
+             font-size: 13px;
+         }
+     
+         }
+
 </style>
 </head>
 <body>
+
+  <div class="headerbody">
+    <header class="header">
+        <img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/OK2.png?raw=true" alt="Big Tits JAVJAV ロゴ" class="logo" onclick="location.href='index.html'" style="cursor: pointer;">
+        <ul class="nav-menu">
+            <li><a href="new-releases.html">New</a></li>
+            <li><a href="actress-list.html">Actress</a></li>
+            <li><a href="tags.html">Tag</a></li>
+            <li><a href="favorites.html">Favorites</a></li>
+        </ul>
+    </header>
+</div> 
+
 <h2 class="actresses-title">Tags</h2>
     <div class="tag-list-page">
         <!-- 属人 -->
@@ -195,5 +367,30 @@
             </div>
         </section>
     </div>
+
+<div class="footerbody">
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://twitter.com/javjav_bigboobs" target="_blank" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://instagram.com/javjav_bigboobs" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://pinterest.com/JAVJAV_Japan" target="_blank" aria-label="Pinterest">
+                    <i class="fab fa-pinterest"></i>
+                </a>
+            </div>
+            <p class="copyright">© 2025 JAVJAV Big Tits. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="terms-of-survice.html">Terms of Service</a></li>
+                <li><a href="contact-us.html">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+</div>
+
 </body>
 </html>
