@@ -24,11 +24,6 @@
             box-sizing: inherit;
         }
 
-        img, video {
-            max-width: 100%;
-            height: auto;
-        }
-
         .work-card {
             background: #fff;
             border-radius: 0.5rem;
@@ -43,6 +38,7 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 0.5rem;
+            gap: 0.5rem;
         }
 
         .work-title {
@@ -54,7 +50,6 @@
             overflow: hidden;
             text-overflow: ellipsis;
             display: inline-block;
-            max-width: calc(100% - 2.2rem);
             background: #eee;
             border-radius: 0.6rem;
             box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
@@ -67,7 +62,7 @@
             font-size: 1.8rem;
             cursor: pointer;
             color: #007acc;
-            padding: 0;
+            padding: 0.2rem;
             display: none;
         }
 
@@ -90,8 +85,9 @@
             font-weight: 550;
         }
 
+/* 基本のボタンスタイル */
         .copy-button {
-            padding: 0.25rem 0.35rem;
+            padding: 0.8rem 1.1rem;
             background: transparent;
             border: none;
             border-radius: 0.3rem;
@@ -100,14 +96,29 @@
             align-items: center;
             justify-content: center;
             transition: transform 0.1s ease, background 0.3s ease;
+            width: 1.4rem; /* アイコンのサイズ調整 */
+            height: 1.4rem; /* アイコンのサイズ調整 */
         }
 
+/* ホバーやクリック時のスタイル */
         .copy-button:hover {
             background: #e0e0e0;
         }
 
         .copy-button:active {
             transform: scale(0.95);
+        }
+
+/* コピー成功前のデフォルトアイコン */
+        .copy-button.default {
+            background: no-repeat center/contain;
+            background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>');
+        }
+
+/* コピー成功時のアイコン */
+        .copy-button.success {
+            background: no-repeat center/contain;
+            background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>');
         }
 
         .work-age-release {
@@ -118,6 +129,11 @@
             display: flex;
             flex-direction: column;
             gap: 0.4rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
         }
 
         .work-media {
@@ -279,7 +295,8 @@
             }
 
             .copy-button {
-                font-size: 1.7rem;
+                width: 1.5rem;
+                height: 1.5rem;
             }
 
             .work-media img {
@@ -321,8 +338,9 @@
                 font-size: 1.4rem;
             }
 
-            .copy-button {
-                font-size: 1.8rem;
+            .copy-button {                
+                width: 1.5rem;
+                height: 1.5em;
             }
 
             .work-media img {
@@ -376,7 +394,7 @@
             }
 
             .work-card {
-                max-width: min(80%, 110rem;)
+                max-width: min(80%, 110rem);
                 padding: 1.5rem;
             }
 
@@ -389,7 +407,8 @@
             }
 
             .copy-button {
-                font-size: 1.8rem;
+                width: 1.6rem;
+                height: 1.6em;
             }
 
             .work-media img {
@@ -439,18 +458,13 @@
 <body>
     <div class="work-card">
         <div class="work-title-line">
-            <h2 class="work-title" id="work-title">Short Title Long Name Test OK Come Beautiful Women I'm rich Finally</h2>
-            <button class="expand-button" id="expand-button" aria-label="タイトルを展開">▼</button>
+            <h2 class="work-title">Short Title Long Name Test OK Come Beautiful Women I'm rich Finally</h2>
+            <button class="expand-button" aria-label="タイトルを展開">▼</button>
         </div>
         <div class="work-meta-line">
             <div class="work-code-container">
                 <span class="work-code">SONE-499</span>
-                <button class="copy-button" onclick="copyCode()" aria-label="コピー">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                    </svg>
-                </button>
+                <button class="copy-button default" aria-label="コピー"></button>
             </div>
             <span class="work-age-release">("15 y/o" 2008/12/26)</span>
         </div>
@@ -501,61 +515,71 @@
     </div>
 
     <!-- copyCode関数をDOMContentLoadedの外に移動 -->
- <script>
-    function copyCode() {
-        const code = document.querySelector(".work-code").innerText;
+   <!-- work-cardのJAVASCRIPT -->
 
-        if (navigator.clipboard) { // Clipboard APIが利用可能かチェック
-            navigator.clipboard.writeText(code).then(() => {
-                const button = document.querySelector(".copy-button");
-                button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
-                setTimeout(() => {
-                    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>';
-                }, 1500);
-            }).catch(err => {
-                alert("コピーに失敗しました: " + err);
-            });
-        } else {
-            alert("このブラウザはコピー機能をサポートしていません");
-        }
-    }
-
+<script>
     document.addEventListener("DOMContentLoaded", () => {
-        const title = document.getElementById("work-title");
-        const button = document.getElementById("expand-button");
-        const titleLine = title.parentElement;
+    // すべての作品カードに対して処理を行う
+    document.querySelectorAll(".work-card").forEach(card => {
+        // 各カード内の要素を取得
+        const title = card.querySelector(".work-title"); // 各カードのタイトル
+        const button = card.querySelector(".expand-button"); // 各カードの展開ボタン
+        const titleLine = title.parentElement; // タイトルの親要素（幅を計算するために使用）
+        // --- コピー機能の管理 ---
+        const copyButton = card.querySelector(".copy-button"); // コピー機能ボタン
+        const workCode = card.querySelector(".work-code").innerText; // コピー対象のコード
 
-        // Setを使ってお気に入りを管理
-        const favoriteButtons = document.querySelectorAll(".favorite-button");
-        const favoritesSet = new Set(JSON.parse(localStorage.getItem("favorites") || "[]"));
+        // コピー機能のクリックイベントを設定
+        copyButton.addEventListener("click", () => {
+            if (navigator.clipboard) { // Clipboard APIが利用可能かチェック
+                navigator.clipboard.writeText(workCode).then(() => {
+                    // コピー成功時にクラスを切り替える
+                    copyButton.classList.remove("default");
+                    copyButton.classList.add("success");
 
-        favoriteButtons.forEach(button => {
-            const workId = button.closest(".work-card").querySelector(".work-code").innerText; // work-codeをIDとして使用
-            
-            // お気に入り済みならハートを赤色に
-            if (favoritesSet.has(workId)) {
-                button.classList.add("active");
+                    setTimeout(() => {
+                        // 元の状態に戻す
+                        copyButton.classList.remove("success");
+                        copyButton.classList.add("default");
+                    }, 1500);
+                }).catch(err => {
+                    alert("コピーに失敗しました: " + err);
+                });
+            } else {
+                alert("このブラウザはコピー機能をサポートしていません");
             }
-
-            button.addEventListener("click", () => {
-                button.classList.toggle("active");
-
-                if (button.classList.contains("active")) {
-                    favoritesSet.add(workId); // お気に入りに追加
-                } else {
-                    favoritesSet.delete(workId); // お気に入りから削除
-                }
-
-                // ローカルストレージに保存（Setを配列に変換）
-                localStorage.setItem("favorites", JSON.stringify([...favoritesSet]));
-            });
         });
 
-        const updateButtonVisibility = () => {
-            const titleWidth = title.scrollWidth;
-            const titleLineWidth = titleLine.offsetWidth;
-            const buttonWidth = button.offsetWidth || 16;
+        // --- お気に入り機能の管理 ---
+        const favoriteButton = card.querySelector(".favorite-button"); // お気に入りボタンを取得
+        const workId = card.querySelector(".work-code").innerText; // 作品コードを取得
+        const favoritesSet = new Set(JSON.parse(localStorage.getItem("favorites") || "[]")); // ローカルストレージから取得
 
+        // お気に入り済みの場合の初期状態設定
+        if (favoritesSet.has(workId)) {
+            favoriteButton.classList.add("active");
+        }
+
+        // お気に入りボタンのクリックイベント設定
+        favoriteButton.addEventListener("click", () => {
+            favoriteButton.classList.toggle("active");
+            if (favoriteButton.classList.contains("active")) {
+                favoritesSet.add(workId); // 追加
+            } else {
+                favoritesSet.delete(workId); // 削除
+            }
+            // ローカルストレージに保存
+            localStorage.setItem("favorites", JSON.stringify([...favoritesSet]));
+        });
+
+
+        // --- タイトル展開ボタンの表示を制御 ---
+        const updateButtonVisibility = () => {
+            const titleWidth = title.scrollWidth; // タイトルの実際の幅
+            const titleLineWidth = titleLine.offsetWidth; // タイトルの親要素の幅
+            const buttonWidth = button.offsetWidth || 16; // ボタンの幅（デフォルト値: 16px）
+
+            // タイトルが表示エリアに収まりきらない場合、ボタンを表示
             if (titleWidth + buttonWidth > titleLineWidth) {
                 button.style.display = "inline-block";
             } else {
@@ -563,22 +587,25 @@
             }
         };
 
-        window.onload = updateButtonVisibility;
-        window.addEventListener("resize", updateButtonVisibility);
-
+        // タイトル展開ボタンのクリックイベントを設定
         button.addEventListener("click", () => {
             const isCollapsed = title.style.whiteSpace === "nowrap" || title.style.whiteSpace === "";
 
             if (isCollapsed) {
-                title.style.whiteSpace = "normal"; 
-                button.textContent = "▲";
+                title.style.whiteSpace = "normal"; // 折りたたみを解除
+                button.textContent = "▲"; // ボタンの表示を変更
                 button.setAttribute("aria-label", "タイトルを折りたたむ");
             } else {
-                title.style.whiteSpace = "nowrap"; 
-                button.textContent = "▼";
+                title.style.whiteSpace = "nowrap"; // 折りたたみ
+                button.textContent = "▼"; // ボタンの表示を変更
                 button.setAttribute("aria-label", "タイトルを展開");
             }
         });
+
+        // --- 初期化処理とイベント設定 ---
+        window.onload = updateButtonVisibility; // ページロード時にボタンの状態を調整
+        window.addEventListener("resize", updateButtonVisibility); // ウィンドウリサイズ時にボタンの状態を調整
+    });
     });
 </script>
 
