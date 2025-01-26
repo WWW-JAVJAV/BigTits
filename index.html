@@ -3,665 +3,244 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>作品カード</title>
+    <meta name="description" content="Discover the Privacy Policy of JAVJAV Big Boobs. Learn how we handle data, cookies, and prioritize your privacy on our platform.">
+    <meta name="author" content="JAVJAV Big Boobs">
+    <meta name="robots" content="index, follow">
+    <title>Privacy Policy | JAVJAV Big Boobs</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
-        /* グローバルリセット */
         html {
             font-size: 62.5%;
+            box-sizing: border-box; /* ここで一度指定 */
+        }
+
+*, *::before, *::after {
+    box-sizing: inherit; /* すべての要素が border-box を継承 */
         }
 
         body {
-            margin: 0.8rem;
+            margin: 0 0.8rem;
             padding: 0;
-            box-sizing: border-box;
             font-family: Arial, sans-serif;
-            font-size: 1.4rem;
-            line-height: 1.4;
-            background: #f4f4f4;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+            color: #333;
         }
 
-        *, *::before, *::after {
-            box-sizing: inherit;
-        }
-
-        .work-card {
-            background: #fff;
-            border-radius: 0.5rem;
-            margin: 2rem auto;
-            padding: 1rem;
-            max-width: 100%;
-            box-shadow: 0 0 1rem rgba(0, 0, 0, 0.05);
-        }
-
-        .work-title-line {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0.5rem;
-            gap: 0.5rem;
-        }
-
-        .work-title {
-            font-size: 1.9rem;
-            font-weight: bold;
+        .headerbody {
             margin: 0;
-            color: #000;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: inline-block;
-            background: #eee;
-            border-radius: 0.6rem;
-            box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
+            padding: 0;
         }
 
-        .expand-button {
-            background: none;
-            border: none;
-            font-size: 1.8rem;
-            cursor: pointer;
-            color: #007acc;
-            padding: 0.2rem;
-            display: none;
+        .header {
+            padding: 10px 0;
+            background: #fff;
+            border-bottom: 1px solid #ddd;
         }
 
-        .work-meta-line {
+        .logo {
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .nav-menu {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0.2rem;
-            color: #555;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            background: #f0f0f0;
+            margin: 0 auto;
         }
 
-        .work-code-container {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
+        .nav-menu li {
+            flex-basis: 25%;
+            text-align: center;
+            border: 2px solid #FFF;
         }
 
-        .work-code {
-            font-size: 1.6rem;
-            font-weight: 550;
-        }
-
-/* 基本のボタンスタイル */
-        .copy-button {
-            padding: 0rem 1rem;
-            border: none;
-            border-radius: 0.3rem;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 1.4rem; /* アイコンのサイズ調整 */
-            height: 1.4rem; /* アイコンのサイズ調整 */
-        }
-
-/* ホバーやクリック時のスタイル */
-        .copy-button:hover {
-            background: #e0e0e0;
-        }
-
-        .copy-button:active {
-            transform: scale(0.95);
-        }
-
-/* コピー成功前のデフォルトアイコン */
-        .copy-button.default {
-            background: no-repeat center/contain;
-            background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>');
-        }
-
-/* コピー成功時のアイコン */
-        .copy-button.success {
-            background: no-repeat center/contain;
-            background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>');
-        }
-
-        .work-age-release {
-            font-size: 1.2rem;
-        }
-
-        .work-content {
-            display: flex;
-            flex-direction: column;
-            gap: 0.4rem;
-        }
-
-        img, video {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .work-media {
-            display: flex;
-        }
-
-        .work-media img {
-            border-radius: 0.4rem;
-            border: 0.1rem solid #ccc;
-            width: 29.25%;
-            object-fit: contain;
-        }
-
-        .work-media video {
-            border-radius: 0.4rem;
-            border: 0.1rem solid #ccc;
-            aspect-ratio: 16 / 9;
-            height: auto;
-            object-fit: contain;
-            background: #000;
-            width: 70.75%;
-        }
-
-        .work-cup-tags {
-            display: flex;
-            flex-direction: column;
-            gap: 0.35rem;
-            margin-bottom: 0.4rem;
-        }
-
-        .work-actress-list {
-            display: flex;
-            flex-direction: column; /* 縦に並べる */
-            gap: 0.1rem;
-        }
-
-        .actress-name a {
-            font-size: 1.7rem;
-            color: #007acc;
-            text-decoration: none;
-            font-weight: bold;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+        .nav-menu a {
             display: block;
-            max-width: 100%;
+            text-decoration: none;
+            color: #333;
+            font-size: 1.6rem;
+            font-weight: bold;
+            padding: 10px 0; 
         }
 
-        .work-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 0.35rem;
-            margin-bottom: 0.35rem;
+        .container {
+            max-width: min(85%, 65rem);
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        .work-tag {
-            display: inline-block;
-            white-space: nowrap;
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 0rem;
             font-size: 1.3rem;
-            font-weight: bold;
-            padding: 0.4rem 0.7rem;
-            background: #eee;
-            border-radius: 0.4rem;
+ 
+        }
+
+        p {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            margin-top: 0.3rem;
+        }
+
+        .footerbody {
+            margin: 0;
+            padding: 0;
+        }
+
+        .footer {
+            background: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.6rem;
             color: #333;
-            text-decoration: none; /* 下線をなくす */
+            border-top: 1px solid #ddd;
         }
 
-        .tags-details summary {
-            font-size: 1.55rem;
-            cursor: pointer;
-            font-weight: bold;
-            color: red;
+        .footer-content {
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
-        .show-more-details summary {
-            font-size: 1.55rem;
-            cursor: pointer;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-            color: gray;
-        }
-        
-        .show-note-details summary {
-            font-size: 1.55rem;
-            cursor: pointer;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-            color: #FF9900;
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 10px;
         }
 
-         .note-container {
-             position: relative; /* 絶対配置の基準 */
-        }
-
-        .show-note-details {
-            max-width: calc(100% - 2.5rem);
-        }
-
-        .favorite-button {
-            cursor: pointer;
-            width: 2.2rem;
-            height: 2.2rem;
-            fill: gray;
-            transition: fill 0.2s ease;
-            position: absolute;
-            top: 0;
-            right: 0;
-        }
-
-       .favorite-button.active {
-            fill: red;
-        }
-
-        .work-details {
-            font-size: 1.35rem;
+        .social-links a {
+            font-size: 24px;
             color: #333;
-            margin-top: 0.5rem;
         }
 
-        .javjav-note {
-            font-size: 1.35rem;
-            color: #333;
-            margin-top: 0.5rem;
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
         }
 
-        /* 538px～767pxのメディアクエリ */
-        @media (min-width: 539px) and (max-width: 767px) { 
-            .work-card {
-
-            }
-
-            .work-title {
-                font-size: 2.1rem;
-            }
-
-            .work-media img {
-                width: 45.54%;
-                content: url("https://image.mgstage.com/images/prestige/abf/188/pb_e_abf-188.jpg");
-            }
-
-            .work-media video {
-                width: 54.46%;
-            }
+        .footer-links a {
+            text-decoration: none;
+            color: #007acc;
+            font-weight: bold;
+            font-size: 1.4rem;
         }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .copyright {
+            margin-bottom: 10px;
+            color: #666;
+        }
+
         /* 768px～1024pxのメディアクエリ */
         @media (min-width: 768px) and (max-width: 1024px) {
-            .work-title {
-                font-size: 2.2rem;
-            }
-
-            .work-card {
+            .logo {
                 max-width: 80%;
-                padding: 1.5rem;
             }
 
-            .work-code {
-                font-size: 1.8rem; /0.1rem大きく/
+            .nav-menu {
+                max-width: 80%;
             }
-
-            .copy-button {
-                width: 1.5rem;
-                height: 1.5rem;
-            }
-
-            .work-media img {
-                content: url("https://image.mgstage.com/images/prestige/abf/188/pb_e_abf-188.jpg");
-                width: 45.54%;
-            }
-
-            .work-media video {
-                width: 54.46%;
-            }
-
-            .work-details {
-                font-size: 1.45rem;
-            }
-
-            .javjav-note {
-                font-size: 1.45rem;
-            }
-
-
         }
+
         /* 1025px～1920pxのメディアクエリ */
-        @media (min-width: 1025px) and (max-width: 1920px){
-
-            .work-title {
-                font-size: 2.2rem;
-            }
-
-            .work-card {
+        @media (min-width: 1025px) {
+            .logo {
                 max-width: min(80%, 100rem);
-                padding: 1.5rem;
             }
 
-            .work-code {
-                font-size: 1.9rem; /0.2rem大きく/
+            .nav-menu {
+                max-width: min(80%, 100rem);
             }
 
-            .work-age-release {
-                font-size: 1.4rem;
+            .nav-menu a {
+                font-size: 18px;
             }
-
-            .copy-button {                
-                width: 1.5rem;
-                height: 1.5em;
-            }
-
-            .work-media img {
-                content: url("https://image.mgstage.com/images/prestige/abf/188/pb_e_abf-188.jpg");
-                width: 45.54%;
-            }
-
-            .work-media video {
-                width: 54.46%;
-            }
-
-            .actress-name a {
-                font-size: 1.85rem;
-            }
-
-            .tags-details summary {
-                font-size: 1.7rem;
-            }
-
-            .work-tags {
-                gap: 0.7rem;
-            }
-
-            .work-tag {
-                font-size: 1.5rem;
-            }
-
-            .show-more-details summary {
-                font-size: 1.7rem;
-            }
-
-            .show-note-details summary {
-                font-size: 1.7rem;
-            }
-
-            .work-details {
-                font-size: 1.65rem;
-            }
-
-            .javjav-note {
-                font-size: 1.65rem;
-            }
-
-        }
-
-        /* 1921px～pxのメディアクエリ */
-        @media (min-width: 1921px) {
-
-            .work-title {
-                font-size: 2.2rem;
-            }
-
-            .work-card {
-                max-width: min(80%, 110rem);
-                padding: 1.5rem;
-            }
-
-            .work-code {
-                font-size: 1.9rem; /0.2rem大きく/
-            }
-
-            .work-age-release {
-                font-size: 1.4rem;
-            }
-
-            .copy-button {
-                width: 1.6rem;
-                height: 1.6em;
-            }
-
-            .work-media img {
-                content: url("https://image.mgstage.com/images/prestige/abf/188/pb_e_abf-188.jpg");
-                width: 45.54%;
-            }
-
-            .work-media video {
-                width: 54.46%;
-            }
-
-            .actress-name a {
-                font-size: 1.85rem;
-            }
-
-            .tags-details summary {
-                font-size: 1.7rem;
-            }
-
-            .work-tags {
-                gap: 0.7rem;
-            }
-
-            .work-tag {
-                font-size: 1.5rem;
-            }
-
-            .show-more-details summary {
-                font-size: 1.7rem;
-            }
-
-            .show-note-details summary {
-                font-size: 1.7rem;
-            }
-
-            .work-details {
-                font-size: 1.65rem;
-            }
-
-            .javjav-note {
-                font-size: 1.65rem;
-            }
-
         }
     </style>
 </head>
 <body>
-    <div class="work-card">
-        <div class="work-title-line">
-            <h2 class="work-title">Short Title Long Name Test OK Come Beautiful Women I'm rich Finally</h2>
-            <button class="expand-button" aria-label="タイトルを展開">▼</button>
-        </div>
-        <div class="work-meta-line">
-            <div class="work-code-container">
-                <span class="work-code">SONE-499</span>
-                <button class="copy-button default" aria-label="コピー"></button>
-            </div>
-            <span class="work-age-release">("15 y/o" 2008/12/26)</span>
-        </div>
-        <div class="work-content">
-            <div class="work-media">
-                <img src="https://image.mgstage.com/images/prestige/abf/188/pf_o1_abf-188.jpg">
-                <video controls>
-                    <source src="https://sample.mgstage.com/sample/prestige/abf/188/abf-188_20241217T102301.mp4#t=100">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            <div class="work-cup-tags">
-                <div class="work-actress-list">
-                    <div class="actress-name"><a href="#">Shion Utsunomiya</a></div>
-                    <div class="actress-name"><a href="#">Extraordinarily Long Actress Name for Testing Ellipsis Behavior and Responsiveness</a></div>
-                </div>
-                <details class="tags-details">
-                    <summary>Tags</summary>
-                    <div class="work-tags">
-                        <a href="#" class="work-tag">Debut</a>
-                        <a href="#" class="work-tag">Big Bust</a>
-                        <a href="#" class="work-tag">HD Video</a>
-                        <a href="#" class="work-tag">Solo</a>
-                        <a href="#" class="work-tag">Amateur</a>
-                        <a href="#" class="work-tag">Amateur</a>
-                    </div>
-                </details>
-            </div>
-        </div>
-        <details class="show-more-details">
-            <summary>Official Description</summary>
-            <p class="work-details">
-                Hitomi's unforgettable debut showcases her stunning J-cup bust and charming personality. Prepare to witness her mesmerizing presence in this groundbreaking release!This video features excellent camera work and natural acting. It's a great introduction to Hitomi's style.
-            </p>
-        </details>
+    <!-- ヘッダー -->
+  <div class="headerbody">
+  <header class="header">
+        <img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/OK2.png?raw=true" alt="JAVJAV ロゴ" class="logo" onclick="location.href='index.html'" style="cursor: pointer;">
+        <ul class="nav-menu">
+            <li><a href="new-releases.html">New</a></li>
+            <li><a href="actress-list.html">Actress</a></li>
+            <li><a href="tags.html">Tag</a></li>
+            <li><a href="favorites.html">Favorites</a></li>
+        </ul>
+    </header>
+</div>
+    <!-- プライバシーポリシー本文 -->
+    <div class="container">
+        <h1>Privacy Policy</h1>
+        <h2>1. Introduction</h2>
+        <p>This website (hereinafter referred to as "the Site") is personally operated as a hobby and respects users' privacy. The Site does not collect personal information.</p>
 
-      <div class="note-container">
-        <details class="show-note-details">
-            <summary>JAVJAV Note</summary>            
-            <p class="javjav-note">
-                This video features excellent camera work and natural acting. It's a great introduction to Hitomi's style.This video features excellent camera work and natural acting. It's a great introduction to Hitomi's style.
-            </p>
-        </details>
-        <svg class="favorite-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-        </svg>
-      </div>
+        <h2>2. Changes to the Privacy Policy</h2>
+        <p>The Site may update the Privacy Policy as necessary. The revised Privacy Policy will take effect from the time it is posted on this page.</p>
+
+        <h2>3. Cookies and Their Use</h2>
+        <p>We use cookies to enhance the functionality and performance of this website. Cookies are used solely to analyze traffic and improve user experience. No personally identifiable information is collected.</p>
+
+        <h2>4. Use of Third-Party Services</h2>
+        <p>This site may use third-party services, such as analytics tools, to better understand user behavior and improve the website.</p>
+
+        <h2>5. Contact Information</h2>
+        <p>If you have any questions or concerns about this Privacy Policy or the use of this website, please feel free to contact us through the form provided on our Contact page. We will respond to your inquiry as soon as possible.
+</p>
     </div>
 
-
-
-
-    <div class="work-card">
-        <div class="work-title-line">
-            <h2 class="work-title">Short Title Long Name Test OK Come Beautiful Women I'm rich Finally</h2>
-            <button class="expand-button" aria-label="タイトルを展開">▼</button>
-        </div>
-        <div class="work-meta-line">
-            <div class="work-code-container">
-                <span class="work-code">SONE-499</span>
-                <button class="copy-button default" aria-label="コピー"></button>
+    <!-- フッター -->
+<div class="footerbody">
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- SNSリンク -->
+            <div class="social-links">
+                <a href="https://twitter.com/javjav_bigboobs" target="_blank" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://instagram.com/javjav_bigboobs" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://pinterest.com/JAVJAV_Japan" target="_blank" aria-label="Pinterest">
+                    <i class="fab fa-pinterest"></i>
+                </a>
             </div>
-            <span class="work-age-release">("15 y/o" 2008/12/26)</span>
+
+            <!-- コピーライト -->
+            <p class="copyright">© 2025 JAVJAV Big Tits. All rights reserved.</p>
+
+            <!-- 主要リンク -->
+            <ul class="footer-links">
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="terms-of-service.html">Terms of Service</a></li>
+                <li><a href="contact-us.html">Contact</a></li>
+            </ul>
         </div>
-        <div class="work-content">
-            <div class="work-media">
-                <img src="https://image.mgstage.com/images/prestige/abf/188/pf_o1_abf-188.jpg">
-                <video controls>
-                    <source src="https://sample.mgstage.com/sample/prestige/abf/188/abf-188_20241217T102301.mp4#t=100">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            <div class="work-cup-tags">
-                <div class="work-actress-list">
-                    <div class="actress-name"><a href="#">Shion Utsunomiya</a></div>
-                    <div class="actress-name"><a href="#">Extraordinarily Long Actress Name for Testing Ellipsis Behavior and Responsiveness</a></div>
-                </div>
-                <details class="tags-details">
-                    <summary>Tags</summary>
-                    <div class="work-tags">
-                        <a href="#" class="work-tag">Debut</a>
-                        <a href="#" class="work-tag">Big Bust</a>
-                        <a href="#" class="work-tag">HD Video</a>
-                        <a href="#" class="work-tag">Solo</a>
-                        <a href="#" class="work-tag">Amateur</a>
-                        <a href="#" class="work-tag">Amateur</a>
-                    </div>
-                </details>
-            </div>
-        </div>
-        <details class="show-more-details">
-            <summary>Official Description</summary>
-            <p class="work-details">
-                Hitomi's unforgettable debut showcases her stunning J-cup bust and charming personality. Prepare to witness her mesmerizing presence in this groundbreaking release!This video features excellent camera work and natural acting. It's a great introduction to Hitomi's style.
-            </p>
-        </details>
-
-      <div class="note-container">
-        <details class="show-note-details">
-            <summary>JAVJAV Note</summary>            
-            <p class="javjav-note">
-                This video features excellent camera work and natural acting. It's a great introduction to Hitomi's style.This video features excellent camera work and natural acting. It's a great introduction to Hitomi's style.
-            </p>
-        </details>
-        <svg class="favorite-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-        </svg>
-      </div>
-    </div>
-
-    <!-- copyCode関数をDOMContentLoadedの外に移動 -->
-   <!-- work-cardのJAVASCRIPT -->
-
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        // すべての作品カードに対して処理を行う
-        const workCards = document.querySelectorAll(".work-card");
-
-        workCards.forEach((card) => {
-            // 各カード内の要素を取得
-            const title = card.querySelector(".work-title"); // 各カードのタイトル
-            const button = card.querySelector(".expand-button"); // 各カードの展開ボタン
-            const titleLine = title.parentElement; // タイトルの親要素（幅を計算するために使用）
-            const copyButton = card.querySelector(".copy-button"); // コピー機能ボタン
-            const workCode = card.querySelector(".work-code").innerText; // コピー対象のコード
-            const favoriteButton = card.querySelector(".favorite-button"); // お気に入りボタン
-            const favoritesSet = new Set(JSON.parse(localStorage.getItem("favorites") || "[]")); // ローカルストレージから取得
-            const workId = card.querySelector(".work-code").innerText; // 作品コードを取得
-
-            // --- コピー機能の管理 ---
-            copyButton.addEventListener("click", () => {
-                if (navigator.clipboard) { // Clipboard APIが利用可能かチェック
-                    navigator.clipboard.writeText(workCode).then(() => {
-                        copyButton.classList.remove("default");
-                        copyButton.classList.add("success");
-
-                        setTimeout(() => {
-                            copyButton.classList.remove("success");
-                            copyButton.classList.add("default");
-                        }, 1500);
-                    }).catch((err) => {
-                        alert("コピーに失敗しました: " + err);
-                    });
-                } else {
-                    alert("このブラウザはコピー機能をサポートしていません");
-                }
-            });
-
-            // --- お気に入り機能の管理 ---
-            if (favoritesSet.has(workId)) {
-                favoriteButton.classList.add("active");
-            }
-
-            favoriteButton.addEventListener("click", () => {
-                favoriteButton.classList.toggle("active");
-                if (favoriteButton.classList.contains("active")) {
-                    favoritesSet.add(workId); // 追加
-                } else {
-                    favoritesSet.delete(workId); // 削除
-                }
-                localStorage.setItem("favorites", JSON.stringify([...favoritesSet]));
-            });
-
-            // --- タイトル展開ボタンの表示を制御 ---
-            const updateButtonVisibility = () => {
-                const titleWidth = title.scrollWidth; // タイトルの実際の幅
-                const titleLineWidth = titleLine.offsetWidth; // タイトルの親要素の幅
-                const buttonWidth = button.offsetWidth || 16; // ボタンの幅（デフォルト値: 16px）
-
-                // タイトルが表示エリアに収まりきらない場合、ボタンを表示
-                if (titleWidth + buttonWidth > titleLineWidth) {
-                    button.style.display = "inline-block";
-                } else {
-                    button.style.display = "none";
-                }
-            };
-
-            // --- タイトル展開ボタンのクリックイベント ---
-            button.addEventListener("click", () => {
-                const isCollapsed = title.style.whiteSpace === "nowrap" || title.style.whiteSpace === "";
-
-                if (isCollapsed) {
-                    title.style.whiteSpace = "normal"; // 折りたたみを解除
-                    button.textContent = "▲"; // ボタンの表示を変更
-                    button.setAttribute("aria-label", "タイトルを折りたたむ");
-                } else {
-                    title.style.whiteSpace = "nowrap"; // 折りたたみ
-                    button.textContent = "▼"; // ボタンの表示を変更
-                    button.setAttribute("aria-label", "タイトルを展開");
-                }
-            });
-
-            // --- 初期化処理 ---
-            updateButtonVisibility();
-            window.addEventListener("resize", updateButtonVisibility);
-        });
-    });
-</script>
-
-
+    </footer>
+ </div>
 </body>
 </html>
