@@ -1,4 +1,5 @@
-          .work-card {
+
+        .work-card {
             background: #fff;
             border-radius: 0.5rem;
             margin: 2rem auto;
@@ -69,7 +70,7 @@
             align-items: center;
             justify-content: center;
             width: 1.4rem; /* アイコンのサイズ調整 */
-            height: 1.4rem; /* アイコンのサイズ調整 */
+            height: 1.5rem; /* アイコンのサイズ調整 */
         }
 
 /* ホバーやクリック時のスタイル */
@@ -112,11 +113,19 @@
             display: flex;
         }
 
-        .work-media img {
+        .responsive-picture {
+            width: 29.25%; /* 親要素に対する幅 */
             border-radius: 0.4rem;
             border: 0.1rem solid #ccc;
-            width: 29.25%;
             object-fit: contain;
+        }
+
+        .responsive-picture img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: inherit;
+            border: none; /* <picture>に既にボーダーがあるため */
         }
 
         .work-media video {
@@ -242,9 +251,8 @@
                 font-size: 2.1rem;
             }
 
-            .work-media img {
-                width: 45.54%;
-                content: url("https://image.mgstage.com/images/prestige/abf/188/pb_e_abf-188.jpg");
+            .responsive-picture {
+                width: 45.44%; /* 親要素に対する幅 */
             }
 
             .work-media video {
@@ -271,8 +279,7 @@
                 height: 1.5rem;
             }
 
-            .work-media img {
-                content: url("https://image.mgstage.com/images/prestige/abf/188/pb_e_abf-188.jpg");
+            .responsive-picture {
                 width: 45.54%;
             }
 
@@ -315,8 +322,7 @@
                 height: 1.5em;
             }
 
-            .work-media img {
-                content: url("https://image.mgstage.com/images/prestige/abf/188/pb_e_abf-188.jpg");
+            .responsive-picture {
                 width: 45.54%;
             }
 
@@ -383,8 +389,7 @@
                 height: 1.6em;
             }
 
-            .work-media img {
-                content: url("https://image.mgstage.com/images/prestige/abf/188/pb_e_abf-188.jpg");
+            .responsive-picture {
                 width: 45.54%;
             }
 
