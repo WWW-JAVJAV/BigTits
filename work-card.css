@@ -1,3 +1,21 @@
+        /* グローバルリセット */
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            margin: 0.8rem;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            font-size: 1.4rem;
+            line-height: 1.4;
+            background: #f4f4f4;
+        }
+
+        *, *::before, *::after {
+            box-sizing: inherit;
+        }
 
         .work-card {
             background: #fff;
