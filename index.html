@@ -3,27 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>作品カード</title>
-</head>
-<style>
-
-        /* グローバルリセット */
+    <meta name="description" content="Explore the world of Japanese Adult Videos (JAV) with JAVJAV Big Boobs. Discover the latest releases, hot actresses, and trending information, all presented in an easy-to-navigate format.">
+    <meta name="author" content="JAVJAV Big Boobs">
+    <meta name="robots" content="index, follow">
+    <title>HOME | JAVJAV BIG BOOBS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
         html {
             font-size: 62.5%;
+            box-sizing: border-box; /* ここで一度指定 */
+            font-family: Arial, sans-serif;
         }
 
+        *, *::before, *::after {
+            box-sizing: inherit; /* すべての要素が border-box を継承 */
+        }
+        
         body {
-            margin: 0.8rem;
+            margin: 0 0.8rem;
+        }
+
+        .headerbody {
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            padding: 10px 0;
+            background: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .logo {
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .nav-menu {
+            display: flex;
+            justify-content: space-between;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            background: #f0f0f0;
+            margin: 0 auto;
+        }
+
+        .nav-menu li {
+            flex-basis: 25%;
+            text-align: center;
+            border: 2px solid #FFF;
+        }
+
+        .nav-menu a {
+            display: block;
+            text-decoration: none;
+            color: #333;
+            font-size: 1.6rem;
+            font-weight: bold;
+            padding: 10px 0; 
+        }
+
+
+        .hot-actresses-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+            color: #333;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            font-family: initial;
+            background-color: #FFEEFF;
+            margin: 0 auto; 
+        }
+
+        .main-visual {
+            display: flex;
+            background-color: #f4f4f4;
+            margin: 0.1rem auto 0.25rem;
+            max-width: 100%;
+            padding: 1rem;
+            gap: 0.5rem;
+        }
+
+        .main-visual2 {
+            display: flex;
+            background-color: #f4f4f4;
+            margin: 0.25rem auto 0.1rem;
+            max-width: 100%;
+            padding: 1rem;
+            gap: 0.5rem;
+        }
+
+        .main-visual__item, .main-visual2__item {
+            flex: 1;
+            aspect-ratio: 5 / 7;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .main-visual__item img, .main-visual2__item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .main-visual__item img:hover, .main-visual2__item img:hover {
+            transform: scale(1.05);
+        }
+
+        .view-more {
+            display: block;
+            text-align: right;
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: #007bff;
+            margin: 0 auto; 
+            text-decoration: none;
+            padding: 0.3rem 0rem;
+        }
+
+        .view-more:hover {
+            text-decoration: underline;
+        }
+
+/* 新着作品セクション */
+        .new-releases-section {
+            max-width: 100%;
+            margin: 5rem auto 2rem;
+            padding: 0rem;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .new-releases-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0rem;
+            margin-top: 1rem;
+            text-align: center;
+            color: #333;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            font-family: initial;
+            background-color: #FFEFD5;
+        }
+
+        .work-card-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0rem;
+            margin: 0rem;
             padding: 0;
             box-sizing: border-box;
             font-family: Arial, sans-serif;
             font-size: 1.4rem;
             line-height: 1.4;
             background: #f4f4f4;
-        }
-
-        *, *::before, *::after {
-            box-sizing: inherit;
         }
 
         .work-card {
@@ -79,7 +219,7 @@
         .work-code-container {
             display: inline-flex;
             align-items: center;
-            gap: 0.7rem;
+            gap: 0.6rem;
         }
 
         .work-code {
@@ -242,7 +382,7 @@
         }
 
         .show-note-details {
-            max-width: calc(100% - 6rem);
+            max-width: calc(100% - 2.5rem);
         }
 
         .favorite-button {
@@ -272,7 +412,91 @@
             margin-top: 0.5rem;
         }
 
-        /* 538px～767pxのメディアクエリ */
+        .view-more-bottom {
+            display: block;
+            text-align: right;
+            font-size: 1.6rem;
+            font-weight: bold;
+            margin: 1.5rem auto 0; 
+            color: #007bff;
+            text-decoration: none;
+            padding: 0.3rem 3rem;
+        }
+
+        .view-more-bottom:hover {
+            text-decoration: underline;
+        }
+
+        .ad-space {
+            width: 100%;
+            max-width: 728px; /* 広告の一般的なPCサイズを仮定 */
+            height: 90px;    /* 高さも一般的なサイズ */
+            margin: 20px auto;
+            background-color: #ddd; /* 広告の背景色 */
+            text-align: center;
+            line-height: 90px;
+            font-size: 1.6rem;
+            color: #555;
+        }
+
+        .footerbody {
+            margin: 0;
+            padding: 0;
+        }
+
+        .footer {
+            background: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.6rem;
+            color: #333;
+            border-top: 1px solid #ddd;
+        }
+
+        .footer-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .social-links a {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #007acc;
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .copyright {
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+
+/* 538px～767pxのメディアクエリ */
         @media (min-width: 539px) and (max-width: 767px) { 
             .work-card {
 
@@ -283,15 +507,43 @@
             }
 
             .responsive-picture {
-                width: 45.54%; /* 親要素に対する幅 */
+                width: 45.44%; /* 親要素に対する幅 */
             }
 
             .work-media video {
                 width: 54.46%;
             }
         }
-        /* 768px～1024pxのメディアクエリ */
+        
+/* 768px～1024pxのメディアクエリ */
         @media (min-width: 768px) and (max-width: 1024px) {
+
+        .logo {
+            max-width: 80%;
+        }
+
+        .nav-menu {
+            max-width: 80%;
+        }
+
+        .hot-actresses-title {
+             max-width: 70%;
+        }
+
+         .main-visual {
+             max-width: 70%;
+        }
+
+        .main-visual2 {
+            max-width: 70%;
+        }   
+
+        .view-more {
+            max-width: 70%;
+            font-size: 1.6rem;
+        }
+
+
             .work-title {
                 font-size: 2.2rem;
             }
@@ -321,7 +573,7 @@
         }
 
             .responsive-picture {
-                width: 45.54%;
+                width: 45.54%; /* 親要素に対する幅 */
             }
 
             .work-media video {
@@ -336,9 +588,51 @@
                 font-size: 1.45rem;
             }
 
+           .view-more-bottom {
+                font-size: 1.7rem;
+            }
+
 
         }
-        /* 1025px～1920pxのメディアクエリ */
+
+/* 1025px～pxのメディアクエリ */
+        @media (min-width: 1025px) {
+         .logo {
+             max-width: min(80%, 100rem);
+         }
+
+         .nav-menu {
+             max-width: min(80%, 100rem);
+         }
+
+         .nav-menu a {
+             font-size: 18px;
+         }
+
+         .hot-actresses-title {
+             max-width: min(70%, 80rem);
+         }
+
+         .main-visual {
+             max-width: min(70%, 80rem);
+         }
+
+         .main-visual2 {
+            max-width: min(70%, 80rem);
+         }   
+
+         .view-more {
+            max-width: min(70%, 80rem);
+            margin: 0 auto;
+            font-size: 1.6rem;
+         }
+
+         .view-more-bottom {
+                font-size: 1.9rem;
+         }
+         }
+       
+/* 1025px～1920pxのメディアクエリ */
         @media (min-width: 1025px) and (max-width: 1920px){
 
             .work-title {
@@ -372,8 +666,9 @@
             width: 1.9rem; /* アイコンサイズに合わせて調整 */
             height: 1.9rem; /* アイコンサイズに合わせて調整 */
         }
+
             .responsive-picture {
-                width: 45.54%;
+                width: 45.54%; /* 親要素に対する幅 */
             }
 
             .work-media video {
@@ -414,7 +709,7 @@
 
         }
 
-        /* 1921px～pxのメディアクエリ */
+/* 1921px～pxのメディアクエリ */
         @media (min-width: 1921px) {
 
             .work-title {
@@ -450,7 +745,7 @@
         }
 
             .responsive-picture {
-                width: 45.54%;
+                width: 45.54%; /* 親要素に対する幅 */
             }
 
             .work-media video {
@@ -491,8 +786,69 @@
 
         }
 
-</style>
+    </style>
+</head>
 <body>
+  <div class="headerbody">
+    <header class="header">
+        <img src="https://github.com/WWW-JAVJAV/BigTits/blob/main/OK2.png?raw=true" alt="JAVJAV ロゴ" class="logo" onclick="location.href='index.html'" style="cursor: pointer;">
+        <ul class="nav-menu">
+            <li><a href="new-releases.html">New</a></li>
+            <li><a href="actress-list.html">Actress</a></li>
+            <li><a href="tags.html">Tag</a></li>
+            <li><a href="favorites.html">Favorites</a></li>
+        </ul>
+    </header>
+</div> 
+<h1 class="hot-actresses-title">Hot Actresses</h1>
+    <!-- 1段目のメインビジュアル -->
+<!-- 1段目のメインビジュアル -->
+<div class="main-visual">
+  <div class="main-visual__item">
+    <a href="{{女優専門ページURL}}" class="actress-link">
+        <img src="{{女優画像URL}}" alt="{{女優名}}" loading="lazy">
+    </a>
+  </div>
+  <div class="main-visual__item">
+    <a href="{{女優専門ページURL}}" class="actress-link">
+        <img src="{{女優画像URL}}" alt="{{女優名}}" loading="lazy">
+    </a>
+  </div>
+  <div class="main-visual__item">
+    <a href="{{女優専門ページURL}}" class="actress-link">
+        <img src="{{女優画像URL}}" alt="{{女優名}}" loading="lazy">
+    </a>
+  </div>
+</div>
+
+<!-- 2段目のメインビジュアル -->
+<div class="main-visual2">
+  <div class="main-visual2__item">
+    <a href="{{女優専門ページURL}}" class="actress-link">
+        <img src="{{女優画像URL}}" alt="{{女優名}}" loading="lazy">
+    </a>
+  </div>
+  <div class="main-visual2__item">
+    <a href="{{女優専門ページURL}}" class="actress-link">
+        <img src="{{女優画像URL}}" alt="{{女優名}}" loading="lazy">
+    </a>
+  </div>
+  <div class="main-visual2__item">
+    <a href="{{女優専門ページURL}}" class="actress-link">
+        <img src="{{女優画像URL}}" alt="{{女優名}}" loading="lazy">
+    </a>
+  </div>
+</div>
+
+
+    <!-- View More リンク -->
+    <a href="actress-list.html" class="view-more">View More »</a>
+
+    <!-- 新着作品セクション -->
+    <div class="new-releases-section">
+        <h2 class="new-releases-title">New Releases</h2>
+        <div class="work-card-container">
+            <!-- 作品カード1 -->
     <article class="work-card">
         <div class="work-title-line">
             <h2 class="work-title">{{タイトルテスト}}</h2>
@@ -523,10 +879,10 @@
         <div class="work-cup-tags">
                 <div class="work-actress-list">
                     <div class="actress-name">
-                        <a href="{{女優専門ページURL}}" class="actress-link" aria-label="{{actress_name}}のプロフィールページ">{{女優名}}</a>
+                        <a href="{{女優専門ページURL}}" class="actress-link" aria-label="{{女優名}}のプロフィールページ">{{女優名}}</a>
                     </div>
                     <div class="actress-name">
-                        <a href="{{女優専門ページURL}}" class="actress-link" aria-label="{{actress_name}}のプロフィールページ">{{女優名}}</a>
+                        <a href="{{女優専門ページURL}}" class="actress-link" aria-label="{{女優名}}のプロフィールページ">{{女優名}}</a>
                     </div>
                 </div>
                 <details class="tags-details">
@@ -566,6 +922,347 @@
       </div>
     </article>
 
+            <!-- 作品カード2 -->
+    <article class="work-card">
+        <div class="work-title-line">
+            <h2 class="work-title">{{タイトルテスト}}</h2>
+            <button class="expand-button" aria-label="タイトルを展開">▼</button>
+        </div>
+        <div class="work-meta-line">
+            <div class="work-code-container">
+                <span class="work-code">{{作品コード}}</span>
+                <button class="copy-button default" aria-label="コピー"></button>
+            </div>
+            <span class="work-age-release">{{年齢とリリース日}}</span>
+        </div>
+        <div class="work-content">
+           <div class="work-media">
+              <picture class="responsive-picture">
+                 <source media="(min-width: 539px)" srcset="{{中画像URL}}">
+                 <img 
+                     src="{{小画像URL}}" 
+                     alt="{{タイトル}}のサムネ画像" 
+                     loading="lazy">
+              </picture>                
+
+              <video controls  preload="metadata">
+                 <source src="{{ビデオURL}}#t={{再生位置}}" type="video/mp4">
+                    Your browser does not support the video tag.
+              </video>
+            </div>
+        <div class="work-cup-tags">
+                <div class="work-actress-list">
+                    <div class="actress-name">
+                        <a href="{{女優専門ページURL}}" class="actress-link" aria-label="{{女優名}}のプロフィールページ">{{女優名}}</a>
+                    </div>
+                    <div class="actress-name">
+                        <a href="{{女優専門ページURL}}" class="actress-link" aria-label="{{女優名}}のプロフィールページ">{{女優名}}</a>
+                    </div>
+                </div>
+                <details class="tags-details">
+                    <summary>Tags</summary>
+                    <div class="work-tags">
+                        <a href="{{タグ専門ページURL}}" class="work-tag">{{タグ}}</a>
+                        <a href="{{タグ専門ページURL}}" class="work-tag">{{タグ}}</a>
+                        <a href="{{タグ専門ページURL}}" class="work-tag">{{タグ}}</a>
+                        <a href="{{タグ専門ページURL}}" class="work-tag">{{タグ}}</a>
+                        <a href="{{タグ専門ページURL}}" class="work-tag">{{タグ}}</a>
+                        <a href="{{タグ専門ページURL}}" class="work-tag">{{タグ}}</a>
+                    </div>
+                </details>
+            </div>
+        </div>
+        <details class="show-more-details">
+            <summary>Official Description</summary>
+            <p class="work-details">
+                {{公式説明}}
+            </p>
+        </details>
+
+      <div class="note-container">
+        <details class="show-note-details">
+            <summary>JAVJAV Note</summary>            
+            <p class="javjav-note">
+                {{JAVJAVノート}}
+            </p>
+        </details>
+        <svg class="favorite-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 
+            2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09
+            C13.09 3.81 14.76 3 16.5 3 
+            19.58 3 22 5.42 22 8.5
+            c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+      </div>
+    </article>
+
+            <!-- 作品カード3 -->
+    <article class="work-card">
+        <div class="work-title-line">
+            <h2 class="work-title">{{タイトルテスト}}</h2>
+            <button class="expand-button" aria-label="タイトルを展開">▼</button>
+        </div>
+        <div class="work-meta-line">
+            <div class="work-code-container">
+                <span class="work-code">{{作品コード}}</span>
+                <button class="copy-button default" aria-label="コピー"></button>
+            </div>
+            <span class="work-age-release">{{年齢とリリース日}}</span>
+        </div>
+        <div class="work-content">
+           <div class="work-media">
+              <picture class="responsive-picture">
+                 <source media="(min-width: 539px)" srcset="{{中画像URL}}">
+                 <img 
+                     src="{{小画像URL}}" 
+                     alt="{{タイトル}}のサムネ画像" 
+                     loading="lazy">
+              </picture>                
+
+              <video controls  preload="metadata">
+                 <source src="{{ビデオURL}}#t={{再生位置}}" type="video/mp4">
+                    Your browser does not support the video tag.
+              </video>
+            </div>
+        <div class="work-cup-tags">
+                <div class="work-actress-list">
+                    <div class="actress-name">
+                        <a href="{{女優専門ページURL}}" class="actress-link" aria-label="{{女優名}}のプロフィールページ">{{女優名}}</a>
+                    </div>
+                    <div class="actress-name">
+                        <a href="{{女優専門ページURL}}" class="actress-link" aria-label="{{女優名}}のプロフィールページ">{{女優名}}</a>
+                    </div>
+                </div>
+                <details class="tags-details">
+                    <summary>Tags</summary>
+                    <div class="work-tags">
+                        <a href="{{タグ専門ページURL}}" class="work-tag">{{タグ}}</a>
+                        <a href="{{タグ専門ページURL}}" class="work-tag">{{タグ}}</a>
+                        <a href="{{タグ専門ページURL}}" class="work-tag">{{タグ}}</a>
+                        <a href="{{タグ専門ページURL}}" class="work-tag">{{タグ}}</a>
+                        <a href="{{タグ専門ページURL}}" class="work-tag">{{タグ}}</a>
+                        <a href="{{タグ専門ページURL}}" class="work-tag">{{タグ}}</a>
+                    </div>
+                </details>
+            </div>
+        </div>
+        <details class="show-more-details">
+            <summary>Official Description</summary>
+            <p class="work-details">
+                {{公式説明}}
+            </p>
+        </details>
+
+      <div class="note-container">
+        <details class="show-note-details">
+            <summary>JAVJAV Note</summary>            
+            <p class="javjav-note">
+                {{JAVJAVノート}}
+            </p>
+        </details>
+        <svg class="favorite-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 
+            2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09
+            C13.09 3.81 14.76 3 16.5 3 
+            19.58 3 22 5.42 22 8.5
+            c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+      </div>
+    </article>
+
+            <!-- 作品カード4 -->
+    <article class="work-card">
+        <div class="work-title-line">
+            <h2 class="work-title">{{タイトルテスト}}</h2>
+            <button class="expand-button" aria-label="タイトルを展開">▼</button>
+        </div>
+        <div class="work-meta-line">
+            <div class="work-code-container">
+                <span class="work-code">{{作品コード}}</span>
+                <button class="copy-button default" aria-label="コピー"></button>
+            </div>
+            <span class="work-age-release">{{年齢とリリース日}}</span>
+        </div>
+        <div class="work-content">
+           <div class="work-media">
+              <picture class="responsive-picture">
+                 <source media="(min-width: 539px)" srcset="{{中画像URL}}">
+                 <img 
+                     src="{{小画像URL}}" 
+                     alt="{{タイトル}}のサムネ画像" 
+                     loading="lazy">
+              </picture>                
+
+              <video controls  preload="metadata">
+                 <source src="{{ビデオURL}}#t={{再生位置}}" type="video/mp4">
+                    Your browser does not support the video tag.
+              </video>
+            </div>
+        <div class="work-cup-tags">
+                <div class="work-actress-list">
+                    <div class="actress-name">
+                        <a href="{{女優専門ページURL}}" class="actress-link" aria-label="{{女優名}}のプロフィールページ">{{女優名}}</a>
+                    </div>
+                    <div class="actress-name">
+                        <a href="{{女優専門ページURL}}" class="actress-link" aria-label="{{女優名}}のプロフィールページ">{{女優名}}</a>
+                    </div>
+                </div>
+                <details class="tags-details">
+                    <summary>Tags</summary>
+                    <div class="work-tags">
+                        <a href="{{タグ専門ページURL}}" class="work-tag">{{タグ}}</a>
+                        <a href="{{タグ専門ページURL}}" class="work-tag">{{タグ}}</a>
+                        <a href="{{タグ専門ページURL}}" class="work-tag">{{タグ}}</a>
+                        <a href="{{タグ専門ページURL}}" class="work-tag">{{タグ}}</a>
+                        <a href="{{タグ専門ページURL}}" class="work-tag">{{タグ}}</a>
+                        <a href="{{タグ専門ページURL}}" class="work-tag">{{タグ}}</a>
+                    </div>
+                </details>
+            </div>
+        </div>
+        <details class="show-more-details">
+            <summary>Official Description</summary>
+            <p class="work-details">
+                {{公式説明}}
+            </p>
+        </details>
+
+      <div class="note-container">
+        <details class="show-note-details">
+            <summary>JAVJAV Note</summary>            
+            <p class="javjav-note">
+                {{JAVJAVノート}}
+            </p>
+        </details>
+        <svg class="favorite-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 
+            2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09
+            C13.09 3.81 14.76 3 16.5 3 
+            19.58 3 22 5.42 22 8.5
+            c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+      </div>
+    </article>
+
+
+            <!-- /作品カード5 -->
+    <article class="work-card">
+        <div class="work-title-line">
+            <h2 class="work-title">{{タイトルテスト}}</h2>
+            <button class="expand-button" aria-label="タイトルを展開">▼</button>
+        </div>
+        <div class="work-meta-line">
+            <div class="work-code-container">
+                <span class="work-code">{{作品コード}}</span>
+                <button class="copy-button default" aria-label="コピー"></button>
+            </div>
+            <span class="work-age-release">{{年齢とリリース日}}</span>
+        </div>
+        <div class="work-content">
+           <div class="work-media">
+              <picture class="responsive-picture">
+                 <source media="(min-width: 539px)" srcset="{{中画像URL}}">
+                 <img 
+                     src="{{小画像URL}}" 
+                     alt="{{タイトル}}のサムネ画像" 
+                     loading="lazy">
+              </picture>                
+
+              <video controls  preload="metadata">
+                 <source src="{{ビデオURL}}#t={{再生位置}}" type="video/mp4">
+                    Your browser does not support the video tag.
+              </video>
+            </div>
+        <div class="work-cup-tags">
+                <div class="work-actress-list">
+                    <div class="actress-name">
+                        <a href="{{女優専門ページURL}}" class="actress-link" aria-label="{{女優名}}のプロフィールページ">{{女優名}}</a>
+                    </div>
+                    <div class="actress-name">
+                        <a href="{{女優専門ページURL}}" class="actress-link" aria-label="{{女優名}}のプロフィールページ">{{女優名}}</a>
+                    </div>
+                </div>
+                <details class="tags-details">
+                    <summary>Tags</summary>
+                    <div class="work-tags">
+                        <a href="{{タグ専門ページURL}}" class="work-tag">{{タグ}}</a>
+                        <a href="{{タグ専門ページURL}}" class="work-tag">{{タグ}}</a>
+                        <a href="{{タグ専門ページURL}}" class="work-tag">{{タグ}}</a>
+                        <a href="{{タグ専門ページURL}}" class="work-tag">{{タグ}}</a>
+                        <a href="{{タグ専門ページURL}}" class="work-tag">{{タグ}}</a>
+                        <a href="{{タグ専門ページURL}}" class="work-tag">{{タグ}}</a>
+                    </div>
+                </details>
+            </div>
+        </div>
+        <details class="show-more-details">
+            <summary>Official Description</summary>
+            <p class="work-details">
+                {{公式説明}}
+            </p>
+        </details>
+
+      <div class="note-container">
+        <details class="show-note-details">
+            <summary>JAVJAV Note</summary>            
+            <p class="javjav-note">
+                {{JAVJAVノート}}
+            </p>
+        </details>
+        <svg class="favorite-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 
+            2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09
+            C13.09 3.81 14.76 3 16.5 3 
+            19.58 3 22 5.42 22 8.5
+            c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+      </div>
+    </article>
+
+    <a href="new-releases.html" class="view-more-bottom">New Releases Page »</a>
+    </div>
+    </div>
+    <!-- /新着作品セクション -->
+
+    <!-- 広告スペース -->
+     <div class="ad-space">
+         <p>広告スペース</p>
+     </div>
+    <!-- /広告スペース -->
+
+<!-- フッター -->
+<div class="footerbody">
+   <footer class="footer">
+        <div class="footer-content">
+            <!-- SNSリンク -->
+            <div class="social-links">
+                <a href="https://twitter.com/javjav_bigboobs" target="_blank" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://instagram.com/javjav_bigboobs" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://pinterest.com/JAVJAV_Japan" target="_blank" aria-label="Pinterest">
+                    <i class="fab fa-pinterest"></i>
+                </a>
+            </div>
+
+            <!-- コピーライト -->
+            <p class="copyright">© 2025 JAVJAV Big Tits. All rights reserved.</p>
+
+            <!-- 主要リンク -->
+            <ul class="footer-links">
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="terms-of-service.html">Terms of Service</a></li>
+                <li><a href="contact-us.html">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+</div>
+<!-- /フッター -->
+
+     <!-- copyCode関数をDOMContentLoadedの外に移動 -->
+     <!-- work-cardのJAVASCRIPT -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const workCards = document.querySelectorAll(".work-card");
