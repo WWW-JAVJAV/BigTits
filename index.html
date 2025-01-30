@@ -90,7 +90,7 @@
 /* 基本のボタンスタイル */
         .copy-button {
             position: relative;
-            padding: 0rem 0rem;
+            padding: 0rem 1.3rem;
             border: none;
             border-radius: 0.3rem;
             cursor: pointer;
@@ -107,7 +107,7 @@
             transform: translate(-50%, -50%);
             width: 2rem; /* アイコンサイズに合わせて調整 */
             height: 1.7rem; /* アイコンサイズに合わせて調整 */
-            background-image: url("images/copy-default.svg"); /* デフォルトアイコン */
+            background-image: url("https://raw.githubusercontent.com/WWW-JAVJAV/BigTits/91e181324a5ccce1b96f410b054c265763552f3d/copy-default.svg"); /* デフォルトアイコン */
             background-size: contain;
             background-repeat: no-repeat;
         }
@@ -121,19 +121,8 @@
             height: 1.7rem; /* アイコンサイズに合わせて調整 */
         }
 
-        .copy-button.success img { /* imgタグを非表示にする */
-            display: none;
-        }
-
-        .copy-button:hover {
-        }
-
         .copy-button:active {
             transform: scale(0.95);
-        }
-
-
-        .copy-button.default {
         }
 
         .work-age-release {
@@ -253,7 +242,7 @@
         }
 
         .show-note-details {
-            max-width: calc(100% - 2.5rem);
+            max-width: calc(100% - 6rem);
         }
 
         .favorite-button {
@@ -316,10 +305,20 @@
                 font-size: 1.8rem; /0.1rem大きく/
             }
 
-            .copy-button {
-                width: 1.5rem;
-                height: 1.5rem;
-            }
+        .copy-button {
+            width: 1.8rem; /* 幅を固定 */
+            height: 1.8rem; /* 高さを固定 */
+        }
+
+        .copy-button::before {
+            width: 1.8rem; /* アイコンサイズに合わせて調整 */
+            height: 1.8rem; /* アイコンサイズに合わせて調整 */
+        }
+
+        .copy-button.success::before {
+            width: 1.8rem; /* アイコンサイズに合わせて調整 */
+            height: 1.8rem; /* アイコンサイズに合わせて調整 */
+        }
 
             .responsive-picture {
                 width: 45.54%;
@@ -359,11 +358,20 @@
                 font-size: 1.4rem;
             }
 
-            .copy-button {                
-                width: 1.5rem;
-                height: 1.5em;
-            }
+        .copy-button {
+            width: 1.9rem; /* 幅を固定 */
+            height: 1.9rem; /* 高さを固定 */
+        }
 
+        .copy-button::before {
+            width: 1.9rem; /* アイコンサイズに合わせて調整 */
+            height: 1.9rem; /* アイコンサイズに合わせて調整 */
+        }
+
+        .copy-button.success::before {
+            width: 1.9rem; /* アイコンサイズに合わせて調整 */
+            height: 1.9rem; /* アイコンサイズに合わせて調整 */
+        }
             .responsive-picture {
                 width: 45.54%;
             }
@@ -426,10 +434,20 @@
                 font-size: 1.4rem;
             }
 
-            .copy-button {
-                width: 1.6rem;
-                height: 1.6em;
-            }
+        .copy-button {
+            width: 1.9rem; /* 幅を固定 */
+            height: 1.9rem; /* 高さを固定 */
+        }
+
+        .copy-button::before {
+            width: 1.9rem; /* アイコンサイズに合わせて調整 */
+            height: 1.9rem; /* アイコンサイズに合わせて調整 */
+        }
+
+        .copy-button.success::before {
+            width: 1.9rem; /* アイコンサイズに合わせて調整 */
+            height: 1.9rem; /* アイコンサイズに合わせて調整 */
+        }
 
             .responsive-picture {
                 width: 45.54%;
@@ -477,15 +495,13 @@
 <body>
     <article class="work-card">
         <div class="work-title-line">
-            <h2 class="work-title">{{タイトル}}</h2>
+            <h2 class="work-title">{{タイトルテスト}}</h2>
             <button class="expand-button" aria-label="タイトルを展開">▼</button>
         </div>
         <div class="work-meta-line">
             <div class="work-code-container">
                 <span class="work-code">{{作品コード}}</span>
-                <button class="copy-button default" aria-label="コピー">
-                    <img src="https://raw.githubusercontent.com/WWW-JAVJAV/BigTits/91e181324a5ccce1b96f410b054c265763552f3d/copy-default.svg" alt="コピー">
-                </button>
+                <button class="copy-button default" aria-label="コピー"></button>
             </div>
             <span class="work-age-release">{{年齢とリリース日}}</span>
         </div>
@@ -495,11 +511,11 @@
                  <source media="(min-width: 539px)" srcset="{{中画像URL}}">
                  <img 
                      src="{{小画像URL}}" 
-                     alt="{{タイトル}}" 
+                     alt="{{タイトル}}のサムネ画像" 
                      loading="lazy">
               </picture>                
 
-              <video controls loading="lazy">
+              <video controls  preload="metadata">
                  <source src="{{ビデオURL}}#t={{再生位置}}" type="video/mp4">
                     Your browser does not support the video tag.
               </video>
@@ -507,21 +523,21 @@
         <div class="work-cup-tags">
                 <div class="work-actress-list">
                     <div class="actress-name">
-                        <a href="{{actress_profile_url}}" class="actress-link" aria-label="{{actress_name}}のプロフィールページ">{{女優名}}</a>
+                        <a href="{{女優専門ページURL}}" class="actress-link" aria-label="{{actress_name}}のプロフィールページ">{{女優名}}</a>
                     </div>
                     <div class="actress-name">
-                        <a href="{{actress_profile_url}}" class="actress-link" aria-label="{{actress_name}}のプロフィールページ">{{女優名}}</a>
+                        <a href="{{女優専門ページURL}}" class="actress-link" aria-label="{{actress_name}}のプロフィールページ">{{女優名}}</a>
                     </div>
                 </div>
                 <details class="tags-details">
                     <summary>Tags</summary>
                     <div class="work-tags">
-                        <a href="{{tag_page_url}}" class="work-tag">{{タグ}}</a>
-                        <a href="{{tag_page_url}}" class="work-tag">{{タグ}}</a>
-                        <a href="{{tag_page_url}}" class="work-tag">{{タグ}}</a>
-                        <a href="{{tag_page_url}}" class="work-tag">{{タグ}}</a>
-                        <a href="{{tag_page_url}}" class="work-tag">{{タグ}}</a>
-                        <a href="{{tag_page_url}}" class="work-tag">{{タグ}}</a>
+                        <a href="{{タグ専門ページURL}}" class="work-tag">{{タグ}}</a>
+                        <a href="{{タグ専門ページURL}}" class="work-tag">{{タグ}}</a>
+                        <a href="{{タグ専門ページURL}}" class="work-tag">{{タグ}}</a>
+                        <a href="{{タグ専門ページURL}}" class="work-tag">{{タグ}}</a>
+                        <a href="{{タグ専門ページURL}}" class="work-tag">{{タグ}}</a>
+                        <a href="{{タグ専門ページURL}}" class="work-tag">{{タグ}}</a>
                     </div>
                 </details>
             </div>
@@ -550,75 +566,54 @@
       </div>
     </article>
 
-<script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const workCards = document.querySelectorAll(".work-card");
 
-document.addEventListener("DOMContentLoaded", () => {
-    // すべての作品カードに対して処理を行う
-    const workCards = document.querySelectorAll(".work-card");
+            workCards.forEach((card) => {
+                const title = card.querySelector(".work-title");
+                const button = card.querySelector(".expand-button");
+                const copyButton = card.querySelector(".copy-button");
 
-    workCards.forEach((card) => {
-        // 各カード内の要素を取得
-        const title = card.querySelector(".work-title"); // 各カードのタイトル
-        const button = card.querySelector(".expand-button"); // 各カードの展開ボタン
-        const titleLine = title.parentElement; // タイトルの親要素（幅を計算するために使用）
-        const copyButton = card.querySelector(".copy-button"); // コピー機能ボタン
+                // コピー機能の管理
+                copyButton.addEventListener("click", () => {
+                    const workCode = card.querySelector(".work-code").innerText;
+                    if (navigator.clipboard) {
+                        navigator.clipboard.writeText(workCode).then(() => {
+                            copyButton.classList.remove("default");
+                            copyButton.classList.add("success");
 
-        // --- コピー機能の管理 ---
-        copyButton.addEventListener("click", () => {
-            const workCode = card.querySelector(".work-code").innerText; // コピー対象のコード
-            if (navigator.clipboard) { // Clipboard APIが利用可能かチェック
-                navigator.clipboard.writeText(workCode).then(() => {
-                    copyButton.classList.remove("default");
-                    copyButton.classList.add("success");
-
-                    setTimeout(() => {
-                        copyButton.classList.remove("success");
-                        copyButton.classList.add("default");
-                    }, 1500);
-                }).catch((err) => {
-                    alert("コピーに失敗しました: " + err);
+                            setTimeout(() => {
+                                copyButton.classList.remove("success");
+                                copyButton.classList.add("default");
+                            }, 1500);
+                        }).catch((err) => {
+                            alert("コピーに失敗しました: " + err);
+                        });
+                    } else {
+                        alert("このブラウザはコピー機能をサポートしていません");
+                    }
                 });
-            } else {
-                alert("このブラウザはコピー機能をサポートしていません");
-            }
-        });
 
-        // --- タイトル展開ボタンの表示を制御 ---
-        const updateButtonVisibility = () => {
-            const titleWidth = title.scrollWidth; // タイトルの実際の幅
-            const titleLineWidth = titleLine.offsetWidth; // タイトルの親要素の幅
-            const buttonWidth = button.offsetWidth || 16; // ボタンの幅（デフォルト値: 16px）
+                // タイトル展開ボタンのクリックイベント
+                button.addEventListener("click", () => {
+                    const isCollapsed = title.style.whiteSpace === "nowrap" || title.style.whiteSpace === "";
 
-            // タイトルが表示エリアに収まりきらない場合、ボタンを表示
-            if (titleWidth + buttonWidth > titleLineWidth) {
+                    if (isCollapsed) {
+                        title.style.whiteSpace = "normal";
+                        button.textContent = "▲";
+                        button.setAttribute("aria-label", "タイトルを折りたたむ");
+                    } else {
+                        title.style.whiteSpace = "nowrap";
+                        button.textContent = "▼";
+                        button.setAttribute("aria-label", "タイトルを展開");
+                    }
+                });
+
+                // 初期化時にボタンを常に表示
                 button.style.display = "inline-block";
-            } else {
-                button.style.display = "none";
-            }
-        };
-
-        // --- タイトル展開ボタンのクリックイベント ---
-        button.addEventListener("click", () => {
-            const isCollapsed = title.style.whiteSpace === "nowrap" || title.style.whiteSpace === "";
-
-            if (isCollapsed) {
-                title.style.whiteSpace = "normal"; // 折りたたみを解除
-                button.textContent = "▲"; // ボタンの表示を変更
-                button.setAttribute("aria-label", "タイトルを折りたたむ");
-            } else {
-                title.style.whiteSpace = "nowrap"; // 折りたたみ
-                button.textContent = "▼"; // ボタンの表示を変更
-                button.setAttribute("aria-label", "タイトルを展開");
-            }
+            });
         });
-
-        // --- 初期化処理 ---
-        updateButtonVisibility();
-        window.addEventListener("resize", updateButtonVisibility);
-    });
-});
-
-
-</script>
+    </script>
 </body>
 </html>
